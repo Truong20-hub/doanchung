@@ -1,0 +1,2389 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\dangkyhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\dangkyhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\idangkyhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\idangkyhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\diemdanhrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\diemdanhrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\diemdanhservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\diemdanhservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\diemthicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\diemthicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\diemthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\diemthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\idiemthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\idiemthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\diemthirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\diemthirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\idiemthirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\idiemthirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\diemthi\\diemthiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\diemthi\\diemthiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\diemthi\\updatediemthirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\diemthi\\updatediemthirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\diemthi\\creatediemthirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\diemthi\\creatediemthirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\diemthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\diemthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\diemdanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\diemdanhcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\idiemdanhservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\idiemdanhservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\idiemdanhrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\idiemdanhrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\diemdanh\\diemdanhresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\diemdanh\\diemdanhresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\diemdanh\\updatediemdanhrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\diemdanh\\updatediemdanhrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\diemdanh\\creatediemdanhrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\diemdanh\\creatediemdanhrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\diemdanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\diemdanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\lichhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\lichhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\dangkyhoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\dangkyhoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\dangkyhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\dangkyhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\thanhtoanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\thanhtoanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\hoadonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\hoadonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\kythirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\kythirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ikythirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ikythirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\giaovienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\giaovienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\kythicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\kythicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\kythiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\kythiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ikythiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ikythiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\kythi\\kythiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\kythi\\kythiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\kythi\\updatekythirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\kythi\\updatekythirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\kythi\\createkythirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\kythi\\createkythirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\thanhtoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\thanhtoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\thanhtoanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\thanhtoanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ithanhtoanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ithanhtoanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ithanhtoanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ithanhtoanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\thanhtoan\\thanhtoanresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\thanhtoan\\thanhtoanresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\thanhtoan\\updatethanhtoanrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\thanhtoan\\updatethanhtoanrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\thanhtoan\\createthanhtoanrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\thanhtoan\\createthanhtoanrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\hoadoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\hoadoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\hoadonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\hoadonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ihoadonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ihoadonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ihoadonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ihoadonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\hoadon\\hoadonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\hoadon\\hoadonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\hoadon\\updatehoadonrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\hoadon\\updatehoadonrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\hoadon\\createhoadonrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\hoadon\\createhoadonrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\kythi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\kythi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\lichhoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\lichhoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\lichhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\lichhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ilichhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ilichhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ilichhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ilichhocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\lichhoc\\lichhocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\lichhoc\\lichhocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\lichhoc\\updatelichhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\lichhoc\\updatelichhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\lichhoc\\createlichhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\lichhoc\\createlichhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\lichhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\lichhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\idangkyhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\idangkyhocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\dangkyhoc\\dangkyhocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\dangkyhoc\\dangkyhocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\dangkyhoc\\updatedangkyhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\dangkyhoc\\updatedangkyhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\dangkyhoc\\createdangkyhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\dangkyhoc\\createdangkyhocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\buoihoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\buoihoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\buoihocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\buoihocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\buoihocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\buoihocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ibuoihocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ibuoihocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ibuoihocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ibuoihocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\buoihoc\\updatebuoihocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\buoihoc\\updatebuoihocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\buoihoc\\buoihocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\buoihoc\\buoihocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\buoihoc\\createbuoihocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\buoihoc\\createbuoihocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\lophocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\lophocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ilophocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ilophocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\lophocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\lophocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ilophocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ilophocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\lophoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\lophoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\vaitro\\createvaitrorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\vaitro\\createvaitrorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\lophoc\\createlophocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\lophoc\\createlophocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\nguoidung\\createnguoidungrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\nguoidung\\createnguoidungrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\lophoc\\updatelophocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\lophoc\\updatelophocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\lophoc\\lophocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\lophoc\\lophocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\lophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\lophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\phonghocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\phonghocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\phonghoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\phonghoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\phonghocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\phonghocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\iphonghocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\iphonghocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\iphonghocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\iphonghocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\phonghoc\\phonghocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\phonghoc\\phonghocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\phonghoc\\updatephonghocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\phonghoc\\updatephonghocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\phonghoc\\createphonghocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\phonghoc\\createphonghocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\phonghoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\phonghoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\khoahocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\khoahocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\khoahocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\khoahocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ikhoahocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ikhoahocrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ikhoahocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ikhoahocservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\khoahoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\khoahoc\\updatekhoahocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\khoahoc\\updatekhoahocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\khoahoc\\khoahocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\khoahoc\\khoahocresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\khoahoc\\createkhoahocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\khoahoc\\createkhoahocrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\hocvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\hocvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\hocvienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\hocvienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\hocviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\hocviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\vaitrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\vaitrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\hocvien\\hocvienresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\hocvien\\hocvienresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\hocvien\\createhocvienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\hocvien\\createhocvienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ihocvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ihocvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ihocvienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ihocvienrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\hocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\hocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\hocvien\\updatehocvienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\hocvien\\updatehocvienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\giaoviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\giaoviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\giaovienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\giaovienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\nguoidungrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\nguoidungrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\igiaovienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\igiaovienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\inguoidungrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\inguoidungrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\comon\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\comon\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\giaovien\\updateteacherrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\giaovien\\updateteacherrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\giaovien\\updategiaovienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\giaovien\\updategiaovienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\giaovien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\giaovien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\giaovien\\giaovienresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\giaovien\\giaovienresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\giaovien\\createteacherrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\giaovien\\createteacherrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\giaovien\\creategiaovienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\giaovien\\creategiaovienrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\helpers\\validationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\helpers\\validationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\dto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\dto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\controllers\\nguoidungcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\nguoidungcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\auth\\loginresquest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\auth\\loginresquest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\nguoidungservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\nguoidungservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\inguoidungservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\inguoidungservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\auth\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\auth\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\interfaces\\ivaitroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\ivaitroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\nguoidung\\nguoidungresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\nguoidung\\nguoidungresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\nguoidung\\updatenguoidungrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\nguoidung\\updatenguoidungrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\services\\vaitroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\vaitroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\repositories\\vaitrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\vaitrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\vaitro\\updatevaitrorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\vaitro\\updatevaitrorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\interfaces\\ivaitrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\ivaitrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dto\\vaitro\\vaitroresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F02016-EB19-BCCD-8D56-0C58F454315B}|DTO\\DTO.csproj|solutionrelative:dto\\vaitro\\vaitroresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\entities\\vaitro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\vaitro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8D6B33C5-CEE1-20B5-A207-99CBB61F699C}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\bll\\bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|c:\\users\\truong\\source\\repos\\hethongquanlylop\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DiemThiController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\DiemThiController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\DiemThiController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\DiemThiController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\DiemThiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:10:18.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DiemDanhService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\DiemDanhService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\DiemDanhService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\DiemDanhService.cs",
+              "RelativeToolTip": "BLL\\Services\\DiemDanhService.cs",
+              "ViewState": "AgIAAMMBAAAAAAAAAAArwM0BAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:03:35.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IDangKyHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IDangKyHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IDangKyHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IDangKyHocRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IDangKyHocRepository.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAQwIQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:49:24.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DiemDanhRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\DiemDanhRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\DiemDanhRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\DiemDanhRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\DiemDanhRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:02:52.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DangKyHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\DangKyHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\DangKyHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\DangKyHocRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\DangKyHocRepository.cs",
+              "ViewState": "AgIAAM8BAAAAAAAAAAAAAMMBAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:50:12.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IDiemThiService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IDiemThiService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IDiemThiService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IDiemThiService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IDiemThiService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T14:18:51.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DiemThiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\DiemThiRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\DiemThiRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\DiemThiRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\DiemThiRepository.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:09:06.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IDiemThiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IDiemThiRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IDiemThiRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IDiemThiRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IDiemThiRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:08:58.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DiemThiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemThi\\DiemThiResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\DiemThi\\DiemThiResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemThi\\DiemThiResponse.cs",
+              "RelativeToolTip": "DTO\\DiemThi\\DiemThiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:07:36.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DiemThiService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\DiemThiService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\DiemThiService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\DiemThiService.cs",
+              "RelativeToolTip": "BLL\\Services\\DiemThiService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T14:18:56.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UpdateDiemThiRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemThi\\UpdateDiemThiRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\DiemThi\\UpdateDiemThiRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemThi\\UpdateDiemThiRequest.cs",
+              "RelativeToolTip": "DTO\\DiemThi\\UpdateDiemThiRequest.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:07:32.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateDiemThiRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemThi\\CreateDiemThiRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\DiemThi\\CreateDiemThiRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemThi\\CreateDiemThiRequest.cs",
+              "RelativeToolTip": "DTO\\DiemThi\\CreateDiemThiRequest.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:07:05.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DiemThi.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\DiemThi.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\DiemThi.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\DiemThi.cs",
+              "RelativeToolTip": "DAL\\Entities\\DiemThi.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAxwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:05:44.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DiemDanhController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\DiemDanhController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\DiemDanhController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\DiemDanhController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\DiemDanhController.cs",
+              "ViewState": "AgIAAH0BAAAAAAAAAAAkwJEBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:03:55.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IDiemDanhService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IDiemDanhService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IDiemDanhService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IDiemDanhService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IDiemDanhService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAkwC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:03:21.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IDiemDanhRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IDiemDanhRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IDiemDanhRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IDiemDanhRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IDiemDanhRepository.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAkwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:02:46.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DiemDanhResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemDanh\\DiemDanhResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\DiemDanh\\DiemDanhResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemDanh\\DiemDanhResponse.cs",
+              "RelativeToolTip": "DTO\\DiemDanh\\DiemDanhResponse.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA5wBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:02:34.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdateDiemDanhRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemDanh\\UpdateDiemDanhRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\DiemDanh\\UpdateDiemDanhRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemDanh\\UpdateDiemDanhRequest.cs",
+              "RelativeToolTip": "DTO\\DiemDanh\\UpdateDiemDanhRequest.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T07:02:19.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateDiemDanhRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemDanh\\CreateDiemDanhRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\DiemDanh\\CreateDiemDanhRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DiemDanh\\CreateDiemDanhRequest.cs",
+              "RelativeToolTip": "DTO\\DiemDanh\\CreateDiemDanhRequest.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:55:07.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DangKyHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\DangKyHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\DangKyHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\DangKyHocService.cs",
+              "RelativeToolTip": "BLL\\Services\\DangKyHocService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:52:05.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DangKyHocController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\DangKyHocController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\DangKyHocController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\DangKyHocController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\DangKyHocController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAArwA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:55:46.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LichHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\LichHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\LichHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\LichHocRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\LichHocRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:11:20.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DiemDanh.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\DiemDanh.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\DiemDanh.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\DiemDanh.cs",
+              "RelativeToolTip": "DAL\\Entities\\DiemDanh.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwB0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T14:06:05.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ThanhToanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\ThanhToanRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\ThanhToanRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\ThanhToanRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\ThanhToanRepository.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAwwAwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:38:29.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Program.cs",
+              "RelativeToolTip": "WebAPI\\Program.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAkwFwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T08:43:32.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "HoaDonRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\HoaDonRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\HoaDonRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\HoaDonRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\HoaDonRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:34:42.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "KyThiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\KyThiRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\KyThiRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\KyThiRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\KyThiRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:41:00.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IKyThiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IKyThiRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IKyThiRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IKyThiRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IKyThiRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:41:21.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "GiaoVienRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\GiaoVienRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\GiaoVienRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\GiaoVienRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\GiaoVienRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T23:45:26.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "KyThiController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\KyThiController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\KyThiController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\KyThiController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\KyThiController.cs",
+              "ViewState": "AgIAACsBAAAAAAAAAAAgwIkBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:44:48.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "KyThiService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\KyThiService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\KyThiService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\KyThiService.cs",
+              "RelativeToolTip": "BLL\\Services\\KyThiService.cs",
+              "ViewState": "AgIAAKUBAAAAAAAAAAAkwLkBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:44:31.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IKyThiService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IKyThiService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IKyThiService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IKyThiService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IKyThiService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA5wCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:44:11.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "KyThiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KyThi\\KyThiResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\KyThi\\KyThiResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KyThi\\KyThiResponse.cs",
+              "RelativeToolTip": "DTO\\KyThi\\KyThiResponse.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA7wBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:40:46.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UpdateKyThiRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KyThi\\UpdateKyThiRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\KyThi\\UpdateKyThiRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KyThi\\UpdateKyThiRequest.cs",
+              "RelativeToolTip": "DTO\\KyThi\\UpdateKyThiRequest.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA5wBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:40:25.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CreateKyThiRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KyThi\\CreateKyThiRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\KyThi\\CreateKyThiRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KyThi\\CreateKyThiRequest.cs",
+              "RelativeToolTip": "DTO\\KyThi\\CreateKyThiRequest.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA5wBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:40:16.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ThanhToanController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\ThanhToanController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ThanhToanController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\ThanhToanController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\ThanhToanController.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAkwDEBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:39:18.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ThanhToanService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\ThanhToanService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ThanhToanService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\ThanhToanService.cs",
+              "RelativeToolTip": "BLL\\Services\\ThanhToanService.cs",
+              "ViewState": "AgIAAA8CAAAAAAAAAAAkwCMCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:39:01.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IThanhToanService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IThanhToanService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IThanhToanService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IThanhToanService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IThanhToanService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAswCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:38:15.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "IThanhToanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IThanhToanRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IThanhToanRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IThanhToanRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IThanhToanRepository.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:38:17.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ThanhToanResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\ThanhToan\\ThanhToanResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\ThanhToan\\ThanhToanResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\ThanhToan\\ThanhToanResponse.cs",
+              "RelativeToolTip": "DTO\\ThanhToan\\ThanhToanResponse.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA5wBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:38:03.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "UpdateThanhToanRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\ThanhToan\\UpdateThanhToanRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\ThanhToan\\UpdateThanhToanRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\ThanhToan\\UpdateThanhToanRequest.cs",
+              "RelativeToolTip": "DTO\\ThanhToan\\UpdateThanhToanRequest.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:37:46.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "HoaDonController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\HoaDonController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\HoaDonController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\HoaDonController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\HoaDonController.cs",
+              "ViewState": "AgIAADgBAAAAAAAAAAAYwKoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:35:39.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "HoaDonService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\HoaDonService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\HoaDonService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\HoaDonService.cs",
+              "RelativeToolTip": "BLL\\Services\\HoaDonService.cs",
+              "ViewState": "AgIAADYCAAAAAAAAAAAkwEoCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:35:14.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IHoaDonService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IHoaDonService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IHoaDonService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IHoaDonService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IHoaDonService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA5wCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:34:59.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CreateThanhToanRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\ThanhToan\\CreateThanhToanRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\ThanhToan\\CreateThanhToanRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\ThanhToan\\CreateThanhToanRequest.cs",
+              "RelativeToolTip": "DTO\\ThanhToan\\CreateThanhToanRequest.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA5wBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:32:57.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IHoaDonRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IHoaDonRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IHoaDonRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IHoaDonRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IHoaDonRepository.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwGAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:34:27.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "HoaDonResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HoaDon\\HoaDonResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\HoaDon\\HoaDonResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HoaDon\\HoaDonResponse.cs",
+              "RelativeToolTip": "DTO\\HoaDon\\HoaDonResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:34:08.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "UpdateHoaDonRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HoaDon\\UpdateHoaDonRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\HoaDon\\UpdateHoaDonRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HoaDon\\UpdateHoaDonRequest.cs",
+              "RelativeToolTip": "DTO\\HoaDon\\UpdateHoaDonRequest.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:33:46.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "CreateHoaDonRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HoaDon\\CreateHoaDonRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\HoaDon\\CreateHoaDonRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HoaDon\\CreateHoaDonRequest.cs",
+              "RelativeToolTip": "DTO\\HoaDon\\CreateHoaDonRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:33:37.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "HoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\HoaDon.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\HoaDon.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\HoaDon.cs",
+              "RelativeToolTip": "DAL\\Entities\\HoaDon.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:23:12.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "KyThi.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\KyThi.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\KyThi.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\KyThi.cs",
+              "RelativeToolTip": "DAL\\Entities\\KyThi.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAxwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:18:58.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "LichHocController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\LichHocController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\LichHocController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\LichHocController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\LichHocController.cs",
+              "ViewState": "AgIAAJABAAAAAAAAAAAkwJUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:16:58.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "LichHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\LichHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\LichHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\LichHocService.cs",
+              "RelativeToolTip": "BLL\\Services\\LichHocService.cs",
+              "ViewState": "AgIAAGEBAAAAAAAAAAAkwHUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:16:23.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "ILichHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\ILichHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\ILichHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\ILichHocService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\ILichHocService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvyoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:16:07.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ThanhToan.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\ThanhToan.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\ThanhToan.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\ThanhToan.cs",
+              "RelativeToolTip": "DAL\\Entities\\ThanhToan.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T01:46:22.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "UpdateLichHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LichHoc\\UpdateLichHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\LichHoc\\UpdateLichHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LichHoc\\UpdateLichHocRequest.cs",
+              "RelativeToolTip": "DTO\\LichHoc\\UpdateLichHocRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:10:13.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "CreateLichHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LichHoc\\CreateLichHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\LichHoc\\CreateLichHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LichHoc\\CreateLichHocRequest.cs",
+              "RelativeToolTip": "DTO\\LichHoc\\CreateLichHocRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:09:50.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "LichHocResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LichHoc\\LichHocResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\LichHoc\\LichHocResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LichHoc\\LichHocResponse.cs",
+              "RelativeToolTip": "DTO\\LichHoc\\LichHocResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:10:32.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ILichHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\ILichHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\ILichHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\ILichHocRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\ILichHocRepository.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAA5wGIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T06:10:56.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "LichHoc.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\LichHoc.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\LichHoc.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\LichHoc.cs",
+              "RelativeToolTip": "DAL\\Entities\\LichHoc.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAkwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T05:58:18.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "IDangKyHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IDangKyHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IDangKyHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IDangKyHocService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IDangKyHocService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAkwGgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:52:09.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "DangKyHocResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DangKyHoc\\DangKyHocResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\DangKyHoc\\DangKyHocResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DangKyHoc\\DangKyHocResponse.cs",
+              "RelativeToolTip": "DTO\\DangKyHoc\\DangKyHocResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:48:11.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "UpdateDangKyHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DangKyHoc\\UpdateDangKyHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\DangKyHoc\\UpdateDangKyHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DangKyHoc\\UpdateDangKyHocRequest.cs",
+              "RelativeToolTip": "DTO\\DangKyHoc\\UpdateDangKyHocRequest.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:47:41.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "CreateDangKyHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DangKyHoc\\CreateDangKyHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\DangKyHoc\\CreateDangKyHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DangKyHoc\\CreateDangKyHocRequest.cs",
+              "RelativeToolTip": "DTO\\DangKyHoc\\CreateDangKyHocRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T13:47:30.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "BuoiHocController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\BuoiHocController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\BuoiHocController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\BuoiHocController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\BuoiHocController.cs",
+              "ViewState": "AgIAAHcBAAAAAAAAAAAuwM4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:14:19.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "BuoiHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\BuoiHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\BuoiHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\BuoiHocService.cs",
+              "RelativeToolTip": "BLL\\Services\\BuoiHocService.cs",
+              "ViewState": "AgIAAG0BAAAAAAAAAAAkwJ8BAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:12:19.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "IBuoiHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IBuoiHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IBuoiHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IBuoiHocService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IBuoiHocService.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAkwHAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:11:11.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "BuoiHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\BuoiHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\BuoiHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\BuoiHocRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\BuoiHocRepository.cs",
+              "ViewState": "AgIAAHsBAAAAAAAAAAAAAG0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:09:58.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "IBuoiHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IBuoiHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IBuoiHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IBuoiHocRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IBuoiHocRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:08:04.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "BuoiHocResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\BuoiHoc\\BuoiHocResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\BuoiHoc\\BuoiHocResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\BuoiHoc\\BuoiHocResponse.cs",
+              "RelativeToolTip": "DTO\\BuoiHoc\\BuoiHocResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:07:02.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "UpdateBuoiHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\BuoiHoc\\UpdateBuoiHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\BuoiHoc\\UpdateBuoiHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\BuoiHoc\\UpdateBuoiHocRequest.cs",
+              "RelativeToolTip": "DTO\\BuoiHoc\\UpdateBuoiHocRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:06:39.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "CreateBuoiHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\BuoiHoc\\CreateBuoiHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\BuoiHoc\\CreateBuoiHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\BuoiHoc\\CreateBuoiHocRequest.cs",
+              "RelativeToolTip": "DTO\\BuoiHoc\\CreateBuoiHocRequest.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:06:15.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "LopHocController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\LopHocController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\LopHocController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\LopHocController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\LopHocController.cs",
+              "ViewState": "AgIAAIoCAAAAAAAAAAAuwJoCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T08:26:12.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "LopHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\LopHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\LopHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\LopHocService.cs",
+              "RelativeToolTip": "BLL\\Services\\LopHocService.cs",
+              "ViewState": "AgIAAKADAAAAAAAAAAAkwLoDAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:01:47.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "LopHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\LopHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\LopHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\LopHocRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\LopHocRepository.cs",
+              "ViewState": "AgIAADsCAAAAAAAAAAAkwE8CAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T08:14:07.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "ILopHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\ILopHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\ILopHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\ILopHocRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\ILopHocRepository.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAkwN0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T08:02:43.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ILopHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\ILopHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\ILopHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\ILopHocService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\ILopHocService.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAkwLYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:01:54.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PagedResult.cs",
+              "RelativeDocumentMoniker": "DTO\\PagedResult.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PagedResult.cs",
+              "RelativeToolTip": "DTO\\PagedResult.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T13:43:55.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "CreateVaiTroRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\VaiTro\\CreateVaiTroRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\VaiTro\\CreateVaiTroRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\VaiTro\\CreateVaiTroRequest.cs",
+              "RelativeToolTip": "DTO\\VaiTro\\CreateVaiTroRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T23:34:56.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "CreateLopHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LopHoc\\CreateLopHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\LopHoc\\CreateLopHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LopHoc\\CreateLopHocRequest.cs",
+              "RelativeToolTip": "DTO\\LopHoc\\CreateLopHocRequest.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwC8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T08:12:00.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "LopHocResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LopHoc\\LopHocResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\LopHoc\\LopHocResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LopHoc\\LopHocResponse.cs",
+              "RelativeToolTip": "DTO\\LopHoc\\LopHocResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T08:12:22.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "CreateNguoiDungRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\NguoiDung\\CreateNguoiDungRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\NguoiDung\\CreateNguoiDungRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\NguoiDung\\CreateNguoiDungRequest.cs",
+              "RelativeToolTip": "DTO\\NguoiDung\\CreateNguoiDungRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T13:05:46.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "UpdateLopHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LopHoc\\UpdateLopHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\LopHoc\\UpdateLopHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\LopHoc\\UpdateLopHocRequest.cs",
+              "RelativeToolTip": "DTO\\LopHoc\\UpdateLopHocRequest.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T08:12:11.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "PhongHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\PhongHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\PhongHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\PhongHocRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\PhongHocRepository.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAjwBwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:26:04.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "PhongHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\PhongHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\PhongHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\PhongHocService.cs",
+              "RelativeToolTip": "BLL\\Services\\PhongHocService.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAswNMBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:24:03.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "IPhongHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IPhongHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IPhongHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IPhongHocRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IPhongHocRepository.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwGsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:23:03.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "LopHoc.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\LopHoc.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\LopHoc.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\LopHoc.cs",
+              "RelativeToolTip": "DAL\\Entities\\LopHoc.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwE0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T01:55:30.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "PhongHocController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\PhongHocController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\PhongHocController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\PhongHocController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\PhongHocController.cs",
+              "ViewState": "AgIAAOwBAAAAAAAAAAAuwBcCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:32:29.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "IPhongHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IPhongHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IPhongHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IPhongHocService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IPhongHocService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowGkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:24:06.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "PhongHocResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PhongHoc\\PhongHocResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\PhongHoc\\PhongHocResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PhongHoc\\PhongHocResponse.cs",
+              "RelativeToolTip": "DTO\\PhongHoc\\PhongHocResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:20:06.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "UpdatePhongHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PhongHoc\\UpdatePhongHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\PhongHoc\\UpdatePhongHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PhongHoc\\UpdatePhongHocRequest.cs",
+              "RelativeToolTip": "DTO\\PhongHoc\\UpdatePhongHocRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:19:45.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "CreatePhongHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PhongHoc\\CreatePhongHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\PhongHoc\\CreatePhongHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\PhongHoc\\CreatePhongHocRequest.cs",
+              "RelativeToolTip": "DTO\\PhongHoc\\CreatePhongHocRequest.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T02:19:17.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "PhongHoc.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\PhongHoc.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\PhongHoc.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\PhongHoc.cs",
+              "RelativeToolTip": "DAL\\Entities\\PhongHoc.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA/wBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T01:55:19.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "IKhoaHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IKhoaHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IKhoaHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IKhoaHocRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IKhoaHocRepository.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAQwKIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T11:47:02.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "NguoiDung.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\NguoiDung.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\NguoiDung.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\NguoiDung.cs",
+              "RelativeToolTip": "DAL\\Entities\\NguoiDung.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAkwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:34:35.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DAL\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "DAL\\Context\\AppDbContext.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAgwN0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T07:21:58.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "KhoaHocRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\KhoaHocRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\KhoaHocRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\KhoaHocRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\KhoaHocRepository.cs",
+              "ViewState": "AgIAAPoBAAAAAAAAAAAcwAgCAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T12:05:01.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "IKhoaHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IKhoaHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IKhoaHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IKhoaHocService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IKhoaHocService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T01:47:02.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "KhoaHocController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\KhoaHocController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\KhoaHocController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\KhoaHocController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\KhoaHocController.cs",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAUwOUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T02:11:06.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "KhoaHocService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\KhoaHocService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\KhoaHocService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\KhoaHocService.cs",
+              "RelativeToolTip": "BLL\\Services\\KhoaHocService.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAiwKoAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T01:49:02.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "UpdateKhoaHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KhoaHoc\\UpdateKhoaHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\KhoaHoc\\UpdateKhoaHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KhoaHoc\\UpdateKhoaHocRequest.cs",
+              "RelativeToolTip": "DTO\\KhoaHoc\\UpdateKhoaHocRequest.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T11:39:46.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "CreateKhoaHocRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KhoaHoc\\CreateKhoaHocRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\KhoaHoc\\CreateKhoaHocRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KhoaHoc\\CreateKhoaHocRequest.cs",
+              "RelativeToolTip": "DTO\\KhoaHoc\\CreateKhoaHocRequest.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T11:39:25.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "KhoaHocResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KhoaHoc\\KhoaHocResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\KhoaHoc\\KhoaHocResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\KhoaHoc\\KhoaHocResponse.cs",
+              "RelativeToolTip": "DTO\\KhoaHoc\\KhoaHocResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T11:40:10.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "HocVienRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\HocVienRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\HocVienRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\HocVienRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\HocVienRepository.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAuwLAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T07:13:49.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 105,
+              "Title": "HocVienController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\HocVienController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\HocVienController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\HocVienController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\HocVienController.cs",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAiwHMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T08:42:38.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 109,
+              "Title": "IHocVienService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IHocVienService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IHocVienService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IHocVienService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IHocVienService.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAwIQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T08:24:31.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "HocVienService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\HocVienService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\HocVienService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\HocVienService.cs",
+              "RelativeToolTip": "BLL\\Services\\HocVienService.cs",
+              "ViewState": "AgIAADgBAAAAAAAAAAArwAwBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-15T08:32:51.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 106,
+              "Title": "VaiTroController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\VaiTroController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\VaiTroController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\VaiTroController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\VaiTroController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T23:39:52.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 107,
+              "Title": "HocVienResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HocVien\\HocVienResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\HocVien\\HocVienResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HocVien\\HocVienResponse.cs",
+              "RelativeToolTip": "DTO\\HocVien\\HocVienResponse.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T07:03:45.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 110,
+              "Title": "IHocVienRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IHocVienRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IHocVienRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IHocVienRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IHocVienRepository.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAiwI0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T07:13:11.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 108,
+              "Title": "CreateHocVienRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HocVien\\CreateHocVienRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\HocVien\\CreateHocVienRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HocVien\\CreateHocVienRequest.cs",
+              "RelativeToolTip": "DTO\\HocVien\\CreateHocVienRequest.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T07:03:07.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 111,
+              "Title": "HocVien.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\HocVien.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\HocVien.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\HocVien.cs",
+              "RelativeToolTip": "DAL\\Entities\\HocVien.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAswEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T07:00:57.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 112,
+              "Title": "UpdateHocVienRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HocVien\\UpdateHocVienRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\HocVien\\UpdateHocVienRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\HocVien\\UpdateHocVienRequest.cs",
+              "RelativeToolTip": "DTO\\HocVien\\UpdateHocVienRequest.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA/wB4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-14T07:03:27.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 114,
+              "Title": "GiaoVienService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\GiaoVienService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\GiaoVienService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\GiaoVienService.cs",
+              "RelativeToolTip": "BLL\\Services\\GiaoVienService.cs",
+              "ViewState": "AgIAADQBAAAAAAAAAAAqwDgBAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T23:52:33.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 113,
+              "Title": "GiaoVienController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\GiaoVienController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\GiaoVienController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\GiaoVienController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\GiaoVienController.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T01:01:18.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 115,
+              "Title": "NguoiDungRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\NguoiDungRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\NguoiDungRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\NguoiDungRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\NguoiDungRepository.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAowHAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:36:43.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 116,
+              "Title": "IGiaoVienService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IGiaoVienService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IGiaoVienService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IGiaoVienService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IGiaoVienService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T23:51:04.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 117,
+              "Title": "INguoiDungRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\INguoiDungRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\INguoiDungRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\INguoiDungRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\INguoiDungRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:32:16.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 118,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\Comon\\PagedResult.cs",
+              "RelativeDocumentMoniker": "DTO\\Comon\\PagedResult.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\Comon\\PagedResult.cs",
+              "RelativeToolTip": "DTO\\Comon\\PagedResult.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T08:17:32.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 119,
+              "Title": "UpdateTeacherRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\UpdateTeacherRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\GiaoVien\\UpdateTeacherRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\UpdateTeacherRequest.cs",
+              "RelativeToolTip": "DTO\\GiaoVien\\UpdateTeacherRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T07:43:14.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 121,
+              "Title": "GiaoVien.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\GiaoVien.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\GiaoVien.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\GiaoVien.cs",
+              "RelativeToolTip": "DAL\\Entities\\GiaoVien.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAD4vzEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T23:40:16.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 120,
+              "Title": "UpdateGiaoVienRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\UpdateGiaoVienRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\GiaoVien\\UpdateGiaoVienRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\UpdateGiaoVienRequest.cs",
+              "RelativeToolTip": "DTO\\GiaoVien\\UpdateGiaoVienRequest.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA5wBoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T23:43:06.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 123,
+              "Title": "CreateTeacherRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\CreateTeacherRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\GiaoVien\\CreateTeacherRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\CreateTeacherRequest.cs",
+              "RelativeToolTip": "DTO\\GiaoVien\\CreateTeacherRequest.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwB4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T01:26:56.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 122,
+              "Title": "GiaoVienResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\GiaoVienResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\GiaoVien\\GiaoVienResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\GiaoVienResponse.cs",
+              "RelativeToolTip": "DTO\\GiaoVien\\GiaoVienResponse.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAywB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T23:44:11.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 124,
+              "Title": "CreateGiaoVienRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\CreateGiaoVienRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\GiaoVien\\CreateGiaoVienRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\GiaoVien\\CreateGiaoVienRequest.cs",
+              "RelativeToolTip": "DTO\\GiaoVien\\CreateGiaoVienRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T23:42:16.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 125,
+              "Title": "ValidationHelper.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Helpers\\ValidationHelper.cs",
+              "RelativeDocumentMoniker": "BLL\\Helpers\\ValidationHelper.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Helpers\\ValidationHelper.cs",
+              "RelativeToolTip": "BLL\\Helpers\\ValidationHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T01:03:31.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 126,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T01:28:01.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 129,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "WebAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\appsettings.json",
+              "RelativeToolTip": "WebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-29T01:32:39.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 128,
+              "Title": "NguoiDungController.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\NguoiDungController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\NguoiDungController.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\Controllers\\NguoiDungController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\NguoiDungController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowEIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:47:16.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 131,
+              "Title": "NguoiDungService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\NguoiDungService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\NguoiDungService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\NguoiDungService.cs",
+              "RelativeToolTip": "BLL\\Services\\NguoiDungService.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAswHUAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:43:24.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 127,
+              "Title": "DTO.csproj",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DTO.csproj",
+              "RelativeDocumentMoniker": "DTO\\DTO.csproj",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\DTO.csproj",
+              "RelativeToolTip": "DTO\\DTO.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-25T08:20:59.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 132,
+              "Title": "INguoiDungService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\INguoiDungService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\INguoiDungService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\INguoiDungService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\INguoiDungService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:41:35.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 130,
+              "Title": "LoginResquest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\Auth\\LoginResquest.cs",
+              "RelativeDocumentMoniker": "DTO\\Auth\\LoginResquest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\Auth\\LoginResquest.cs",
+              "RelativeToolTip": "DTO\\Auth\\LoginResquest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T01:01:14.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 133,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\JwtService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\JwtService.cs",
+              "RelativeToolTip": "BLL\\Services\\JwtService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T01:22:02.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 134,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\Auth\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\Auth\\LoginResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\Auth\\LoginResponse.cs",
+              "RelativeToolTip": "DTO\\Auth\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T01:04:02.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 135,
+              "Title": "IJwtService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IJwtService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IJwtService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IJwtService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IJwtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T01:20:28.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 136,
+              "Title": "IVaiTroService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IVaiTroService.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IVaiTroService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Interfaces\\IVaiTroService.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IVaiTroService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T01:39:56.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 137,
+              "Title": "NguoiDungResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\NguoiDung\\NguoiDungResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\NguoiDung\\NguoiDungResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\NguoiDung\\NguoiDungResponse.cs",
+              "RelativeToolTip": "DTO\\NguoiDung\\NguoiDungResponse.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA5wBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:45:07.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 138,
+              "Title": "UpdateNguoiDungRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\NguoiDung\\UpdateNguoiDungRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\NguoiDung\\UpdateNguoiDungRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\NguoiDung\\UpdateNguoiDungRequest.cs",
+              "RelativeToolTip": "DTO\\NguoiDung\\UpdateNguoiDungRequest.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T00:45:08.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 139,
+              "Title": "VaiTroService.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\VaiTroService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\VaiTroService.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\Services\\VaiTroService.cs",
+              "RelativeToolTip": "BLL\\Services\\VaiTroService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowB8AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T01:48:35.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 140,
+              "Title": "VaiTroRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\VaiTroRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Repositories\\VaiTroRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Repositories\\VaiTroRepository.cs",
+              "RelativeToolTip": "DAL\\Repositories\\VaiTroRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwDsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T01:34:14.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 141,
+              "Title": "UpdateVaiTroRequest.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\VaiTro\\UpdateVaiTroRequest.cs",
+              "RelativeDocumentMoniker": "DTO\\VaiTro\\UpdateVaiTroRequest.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\VaiTro\\UpdateVaiTroRequest.cs",
+              "RelativeToolTip": "DTO\\VaiTro\\UpdateVaiTroRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T23:35:27.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 142,
+              "Title": "IVaiTroRepository.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IVaiTroRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\Interfaces\\IVaiTroRepository.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Interfaces\\IVaiTroRepository.cs",
+              "RelativeToolTip": "DAL\\Interfaces\\IVaiTroRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T01:28:02.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 143,
+              "Title": "VaiTroResponse.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\VaiTro\\VaiTroResponse.cs",
+              "RelativeDocumentMoniker": "DTO\\VaiTro\\VaiTroResponse.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DTO\\VaiTro\\VaiTroResponse.cs",
+              "RelativeToolTip": "DTO\\VaiTro\\VaiTroResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T23:35:35.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 144,
+              "Title": "VaiTro.cs",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\VaiTro.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\VaiTro.cs",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\Entities\\VaiTro.cs",
+              "RelativeToolTip": "DAL\\Entities\\VaiTro.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T07:22:16.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 147,
+              "Title": "DAL.csproj",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\DAL.csproj",
+              "RelativeDocumentMoniker": "DAL\\DAL.csproj",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\DAL\\DAL.csproj",
+              "RelativeToolTip": "DAL\\DAL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-25T08:20:47.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 146,
+              "Title": "BLL.csproj",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\BLL.csproj",
+              "RelativeDocumentMoniker": "BLL\\BLL.csproj",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\BLL\\BLL.csproj",
+              "RelativeToolTip": "BLL\\BLL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-25T08:20:22.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 145,
+              "Title": "WebAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\WebAPI.csproj",
+              "RelativeDocumentMoniker": "WebAPI\\WebAPI.csproj",
+              "ToolTip": "C:\\Users\\truong\\source\\repos\\HeThongQuanLyLop\\WebAPI\\WebAPI.csproj",
+              "RelativeToolTip": "WebAPI\\WebAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-25T08:21:08.855Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

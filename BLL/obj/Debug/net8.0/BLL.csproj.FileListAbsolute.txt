@@ -1,0 +1,17 @@
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\bin\Debug\net8.0\BLL.deps.json
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\bin\Debug\net8.0\BLL.dll
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\bin\Debug\net8.0\BLL.pdb
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\bin\Debug\net8.0\DAL.dll
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\bin\Debug\net8.0\DTO.dll
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\bin\Debug\net8.0\DAL.pdb
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\bin\Debug\net8.0\DTO.pdb
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.csproj.AssemblyReference.cache
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.csproj.Up2Date
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.dll
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\refint\BLL.dll
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\BLL.pdb
+C:\Users\truong\source\repos\HeThongQuanLyLop\BLL\obj\Debug\net8.0\ref\BLL.dll
