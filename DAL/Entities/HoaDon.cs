@@ -48,5 +48,8 @@ public partial class HoaDon
     public virtual LopHoc MaLopNavigation { get; set; } = null!;
 
     [InverseProperty("MaHoaDonNavigation")]
+    public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; } = new List<ChiTietHoaDon>();
+
+    [InverseProperty("MaHoaDonNavigation")]
     public virtual ICollection<ThanhToan> ThanhToans { get; set; } = new List<ThanhToan>();
 }

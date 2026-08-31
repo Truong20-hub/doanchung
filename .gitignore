@@ -1,0 +1,37 @@
+## Build output
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+*.cache
+*.user
+
+## Visual Studio / VSCode
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## .NET
+project.nuget.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+project.assets.json
+
+## Logs
+*.log
+logs/
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Environment / Secrets
+appsettings.Development.json
+*.env
+.env
+

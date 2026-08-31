@@ -1,4 +1,6 @@
+using AutoMapper;
 using BLL.Interfaces;
+using BLL.Mappings;
 using BLL.Services;
 using DAL.Context;
 using DAL.Interfaces;
@@ -79,6 +81,9 @@ builder.Services.AddScoped<ILichHocService, LichHocService>();
 // HoaDon
 builder.Services.AddScoped<IHoaDonRepository, HoaDonRepository>();
 builder.Services.AddScoped<IHoaDonService, HoaDonService>();
+// Chi tiết hóa đơn
+builder.Services.AddScoped<IChiTietHoaDonRepository, ChiTietHoaDonRepository>();
+builder.Services.AddScoped<IChiTietHoaDonService, ChiTietHoaDonService>();
 // thanh toán
 builder.Services.AddScoped<IThanhToanRepository, ThanhToanRepository>();
 builder.Services.AddScoped<IThanhToanService, ThanhToanService>();
@@ -93,6 +98,8 @@ builder.Services.AddScoped<IDiemThiRepository, DiemThiRepository>();
 builder.Services.AddScoped<IDiemThiService, DiemThiService>();
 
 builder.Services.AddScoped<IJwtService, JwtService>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 

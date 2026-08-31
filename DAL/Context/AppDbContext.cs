@@ -28,6 +28,8 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<HoaDon> HoaDons { get; set; }
 
+    public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
+
     public virtual DbSet<HocVien> HocViens { get; set; }
 
     public virtual DbSet<KhoaHoc> KhoaHocs { get; set; }
@@ -126,6 +128,24 @@ public partial class AppDbContext : DbContext
             entity.HasOne(d => d.MaLopNavigation).WithMany(p => p.HoaDons)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_hoadon_lop");
+        });
+
+        modelBuilder.Entity<ChiTietHoaDon>(entity =>
+        {
+            entity.HasKey(e => e.MaChiTietHoaDon).HasName("PK__chi_tiet_hoa_don__1A2B3C4D5E6F7G8H");
+
+            entity.ToTable("chi_tiet_hoa_don");
+
+            entity.Property(e => e.SoLuong).IsRequired();
+            entity.Property(e => e.DonGia).HasColumnType("decimal(12, 2)").IsRequired();
+            entity.Property(e => e.ThanhTien).HasColumnType("decimal(12, 2)").IsRequired();
+            entity.Property(e => e.GhiChu).HasMaxLength(255);
+
+            entity.HasOne(d => d.MaHoaDonNavigation)
+                .WithMany(p => p.ChiTietHoaDons)
+                .HasForeignKey(d => d.MaHoaDon)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_chitiet_hoadon_hoadon");
         });
 
         modelBuilder.Entity<HocVien>(entity =>
