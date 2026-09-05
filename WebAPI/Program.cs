@@ -90,6 +90,9 @@ builder.Services.AddScoped<ITinNhanService, TinNhanService>();
 // Thông báo
 builder.Services.AddScoped<IThongBaoRepository, ThongBaoRepository>();
 builder.Services.AddScoped<IThongBaoService, ThongBaoService>();
+// Báo cáo
+builder.Services.AddScoped<IBaoCaoRepository, BaoCaoRepository>();
+builder.Services.AddScoped<IBaoCaoService, BaoCaoService>();
 // thanh toán
 builder.Services.AddScoped<IThanhToanRepository, ThanhToanRepository>();
 builder.Services.AddScoped<IThanhToanService, ThanhToanService>();
