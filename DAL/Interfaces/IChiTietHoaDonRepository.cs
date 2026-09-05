@@ -29,25 +29,37 @@ namespace DAL.Interfaces
         Task<IEnumerable<ChiTietHoaDon>> SearchAsync(string? keyword);
 
         // =====================================================
-        // 5. KIỂM TRA ID
+        // 5. PHÂN TRANG
+        // =====================================================
+
+        Task<object> GetPagedAsync(int pageNumber, int pageSize);
+
+        // =====================================================
+        // 6. TÌM KIẾM + PHÂN TRANG
+        // =====================================================
+
+        Task<object> SearchPagedAsync(string? keyword, int pageNumber, int pageSize);
+
+        // =====================================================
+        // 7. KIỂM TRA ID
         // =====================================================
 
         Task<bool> ExistsByIdAsync(int id);
 
         // =====================================================
-        // 6. THÊM
+        // 8. THÊM
         // =====================================================
 
         Task<ChiTietHoaDon> AddAsync(ChiTietHoaDon chiTietHoaDon);
 
         // =====================================================
-        // 7. CẬP NHẬT
+        // 9. CẬP NHẬT
         // =====================================================
 
         Task<ChiTietHoaDon?> UpdateAsync(ChiTietHoaDon chiTietHoaDon);
 
         // =====================================================
-        // 8. XÓA
+        // 10. XÓA
         // =====================================================
 
         Task<bool> DeleteAsync(int id);

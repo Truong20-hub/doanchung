@@ -22,7 +22,11 @@ namespace DAL.Repositories
         {
             return await _context.ChiTietHoaDons
                 .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaHocVienNavigation)
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaLopNavigation)
                 .AsNoTracking()
+                .OrderBy(x => x.MaChiTietHoaDon)
                 .ToListAsync();
         }
 
@@ -34,6 +38,9 @@ namespace DAL.Repositories
         {
             return await _context.ChiTietHoaDons
                 .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaHocVienNavigation)
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaLopNavigation)
                 .FirstOrDefaultAsync(x => x.MaChiTietHoaDon == id);
         }
 
@@ -45,8 +52,12 @@ namespace DAL.Repositories
         {
             return await _context.ChiTietHoaDons
                 .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaHocVienNavigation)
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaLopNavigation)
                 .Where(x => x.MaHoaDon == maHoaDon)
                 .AsNoTracking()
+                .OrderBy(x => x.MaChiTietHoaDon)
                 .ToListAsync();
         }
 
@@ -58,6 +69,9 @@ namespace DAL.Repositories
         {
             var query = _context.ChiTietHoaDons
                 .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaHocVienNavigation)
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaLopNavigation)
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(keyword))
@@ -65,13 +79,82 @@ namespace DAL.Repositories
                 keyword = keyword.Trim();
 
                 query = query.Where(x =>
-                    x.GhiChu != null && x.GhiChu.Contains(keyword)
-                    || x.MaHoaDonNavigation.TrangThai != null && x.MaHoaDonNavigation.TrangThai.Contains(keyword));
+                    (x.GhiChu != null && x.GhiChu.Contains(keyword))
+                    || x.MaHoaDonNavigation.TrangThai != null &&
+                       x.MaHoaDonNavigation.TrangThai.Contains(keyword)
+                    || x.MaHoaDonNavigation.MaHocVienNavigation.HoTen.Contains(keyword)
+                    || x.MaHoaDonNavigation.MaLopNavigation.TenLop.Contains(keyword)
+                    || x.MaHoaDonNavigation.MaLopNavigation.MaLopCode.Contains(keyword));
             }
 
             return await query
                 .AsNoTracking()
                 .ToListAsync();
+        }
+
+        public async Task<object> GetPagedAsync(int pageNumber, int pageSize)
+        {
+            var query = _context.ChiTietHoaDons
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaHocVienNavigation)
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaLopNavigation)
+                .AsNoTracking();
+
+            var totalItems = await query.CountAsync();
+            var data = await query
+                .OrderBy(x => x.MaChiTietHoaDon)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return new
+            {
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalItems = totalItems,
+                TotalPages = (int)Math.Ceiling((double)totalItems / pageSize),
+                Data = data
+            };
+        }
+
+        public async Task<object> SearchPagedAsync(string? keyword, int pageNumber, int pageSize)
+        {
+            var query = _context.ChiTietHoaDons
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaHocVienNavigation)
+                .Include(x => x.MaHoaDonNavigation)
+                .ThenInclude(x => x.MaLopNavigation)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                keyword = keyword.Trim();
+                query = query.Where(x =>
+                    (x.GhiChu != null && x.GhiChu.Contains(keyword))
+                    || (x.MaHoaDonNavigation.TrangThai != null &&
+                        x.MaHoaDonNavigation.TrangThai.Contains(keyword))
+                    || x.MaHoaDonNavigation.MaHocVienNavigation.HoTen.Contains(keyword)
+                    || x.MaHoaDonNavigation.MaLopNavigation.TenLop.Contains(keyword)
+                    || x.MaHoaDonNavigation.MaLopNavigation.MaLopCode.Contains(keyword));
+            }
+
+            var totalItems = await query.CountAsync();
+            var data = await query
+                .OrderBy(x => x.MaChiTietHoaDon)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .AsNoTracking()
+                .ToListAsync();
+
+            return new
+            {
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalItems = totalItems,
+                TotalPages = (int)Math.Ceiling((double)totalItems / pageSize),
+                Data = data
+            };
         }
 
         // =====================================================

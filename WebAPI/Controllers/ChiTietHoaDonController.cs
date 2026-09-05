@@ -1,6 +1,5 @@
 using BLL.Interfaces;
 using DTO.ChiTietHoaDon;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -8,7 +7,6 @@ namespace WebAPI.Controllers
     /// <summary>
     /// API quản lý chi tiết hóa đơn.
     /// </summary>
-    [Authorize(Roles = "Admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class ChiTietHoaDonController : ControllerBase
@@ -18,6 +16,87 @@ namespace WebAPI.Controllers
         public ChiTietHoaDonController(IChiTietHoaDonService service)
         {
             _service = service;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                return Ok(await _service.GetAllAsync());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Lỗi khi lấy danh sách chi tiết hóa đơn.",
+                    detail = ex.Message
+                });
+            }
+        }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> Search([FromQuery] string? keyword)
+        {
+            try
+            {
+                return Ok(await _service.SearchAsync(keyword));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Lỗi khi tìm kiếm chi tiết hóa đơn.",
+                    detail = ex.Message
+                });
+            }
+        }
+
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetPaged(
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = 10)
+        {
+            try
+            {
+                return Ok(await _service.GetPagedAsync(pageNumber, pageSize));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Lỗi khi phân trang chi tiết hóa đơn.",
+                    detail = ex.Message
+                });
+            }
+        }
+
+        [HttpGet("search-paged")]
+        public async Task<IActionResult> SearchPaged(
+            [FromQuery] string? keyword,
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = 10)
+        {
+            try
+            {
+                return Ok(await _service.SearchPagedAsync(keyword, pageNumber, pageSize));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Lỗi khi tìm kiếm và phân trang chi tiết hóa đơn.",
+                    detail = ex.Message
+                });
+            }
         }
 
         /// <summary>
@@ -93,7 +172,10 @@ namespace WebAPI.Controllers
             try
             {
                 var result = await _service.CreateAsync(request);
-                return StatusCode(StatusCodes.Status201Created, result);
+                return CreatedAtAction(
+                    nameof(GetById),
+                    new { id = result.MaChiTietHoaDon },
+                    result);
             }
             catch (ArgumentException ex)
             {
@@ -176,19 +258,18 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var result = await _service.DeleteAsync(id);
-
-                if (!result)
-                {
-                    return NotFound(new
-                    {
-                        message = $"Không tìm thấy chi tiết hóa đơn có mã {id}."
-                    });
-                }
+                await _service.DeleteAsync(id);
 
                 return Ok(new
                 {
                     message = "Xóa chi tiết hóa đơn thành công."
+                });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new
+                {
+                    message = ex.Message
                 });
             }
             catch (Exception ex)

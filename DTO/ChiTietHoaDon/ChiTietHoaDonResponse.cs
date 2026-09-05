@@ -29,6 +29,9 @@ namespace DTO.ChiTietHoaDon
         // Mã lớp của hóa đơn (nếu cần hiển thị thông tin join).
         public int? MaLop { get; set; }
 
+        // Mã lớp dạng code của hóa đơn.
+        public string? MaLopCode { get; set; }
+
         // Tên lớp được join từ bảng lop_hoc qua hóa đơn.
         public string? TenLop { get; set; }
 
