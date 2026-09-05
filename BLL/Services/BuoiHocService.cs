@@ -1,7 +1,6 @@
 using BLL.Interfaces;
 using DAL.Entities;
 using DAL.Interfaces;
-using DAL.Repositories;
 using DTO.BuoiHoc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +9,6 @@ namespace BLL.Services
     public class BuoiHocService : IBuoiHocService
     {
         private readonly IBuoiHocRepository _repository;
-        private readonly ILopHocRepository lopHocRepository;
 
         public BuoiHocService(
             IBuoiHocRepository repository)

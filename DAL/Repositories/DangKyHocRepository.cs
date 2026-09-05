@@ -158,7 +158,7 @@ namespace DAL.Repositories
             await _context.SaveChangesAsync();
 
             return await GetByIdAsync(
-                dangKyHoc.MaDangKy);
+                dangKyHoc.MaDangKy) ?? dangKyHoc;
         }
 
         // =====================================================

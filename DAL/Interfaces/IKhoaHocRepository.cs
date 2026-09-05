@@ -152,7 +152,7 @@ namespace DAL.Interfaces
         //====================================================
         // 18 lấy khóa học theo mã
         //=====================================================
-        Task<KhoaHoc> GetByIdAsync(int maCode);
+        Task<KhoaHoc?> GetByIdAsync(int maCode);
         // ====================================================
         // 19. kiểm tra ten khoa học có tồn tại ko
         // =====================================================

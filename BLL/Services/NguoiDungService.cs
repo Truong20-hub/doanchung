@@ -9,10 +9,14 @@ namespace BLL.Services
     public class NguoiDungService : INguoiDungService
     {
         private readonly INguoiDungRepository _nguoiDungRepository;
+        private readonly IJwtService _jwtService;
 
-        public NguoiDungService(INguoiDungRepository nguoiDungRepository)
+        public NguoiDungService(
+            INguoiDungRepository nguoiDungRepository,
+            IJwtService jwtService)
         {
             _nguoiDungRepository = nguoiDungRepository;
+            _jwtService = jwtService;
         }
 
         // Lấy danh sách
@@ -106,14 +110,6 @@ namespace BLL.Services
         {
             await _nguoiDungRepository.DeleteAsync(id);
             await _nguoiDungRepository.SaveChangesAsync();
-        }
-        private readonly IJwtService _jwtService;
-        public NguoiDungService(
-    INguoiDungRepository nguoiDungRepository,
-    IJwtService jwtService)
-        {
-            _nguoiDungRepository = nguoiDungRepository;
-            _jwtService = jwtService;
         }
         public async Task<LoginResponse> LoginAsync(LoginResquest request)
         {
