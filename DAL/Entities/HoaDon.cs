@@ -52,4 +52,7 @@ public partial class HoaDon
 
     [InverseProperty("MaHoaDonNavigation")]
     public virtual ICollection<ThanhToan> ThanhToans { get; set; } = new List<ThanhToan>();
+
+    [InverseProperty("MaHoaDonNavigation")]
+    public virtual ICollection<ThongBao> ThongBaos { get; set; } = new List<ThongBao>();
 }

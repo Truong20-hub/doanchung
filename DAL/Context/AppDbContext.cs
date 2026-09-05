@@ -32,6 +32,8 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<TinNhan> TinNhans { get; set; }
 
+    public virtual DbSet<ThongBao> ThongBaos { get; set; }
+
     public virtual DbSet<HocVien> HocViens { get; set; }
 
     public virtual DbSet<KhoaHoc> KhoaHocs { get; set; }
@@ -155,6 +157,36 @@ public partial class AppDbContext : DbContext
                 .WithMany(p => p.TinNhans)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_tinnhan_hoc_vien");
+        });
+
+        modelBuilder.Entity<ThongBao>(entity =>
+        {
+            entity.HasKey(e => e.MaThongBao).HasName("PK__thong_bao");
+
+            entity.Property(e => e.ThoiGianTao)
+                .HasDefaultValueSql("(sysdatetime())");
+            entity.Property(e => e.DaDoc)
+                .HasDefaultValue(false);
+
+            entity.HasOne(d => d.MaNguoiDungNavigation)
+                .WithMany(p => p.ThongBaos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_thongbao_nguoi_dung");
+
+            entity.HasOne(d => d.MaHocVienNavigation)
+                .WithMany(p => p.ThongBaos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_thongbao_hoc_vien");
+
+            entity.HasOne(d => d.MaLopNavigation)
+                .WithMany(p => p.ThongBaos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_thongbao_lop");
+
+            entity.HasOne(d => d.MaHoaDonNavigation)
+                .WithMany(p => p.ThongBaos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_thongbao_hoa_don");
         });
 
         modelBuilder.Entity<ChiTietHoaDon>(entity =>

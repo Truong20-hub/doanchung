@@ -87,6 +87,9 @@ builder.Services.AddScoped<IChiTietHoaDonService, ChiTietHoaDonService>();
 // Tin nhắn
 builder.Services.AddScoped<ITinNhanRepository, TinNhanRepository>();
 builder.Services.AddScoped<ITinNhanService, TinNhanService>();
+// Thông báo
+builder.Services.AddScoped<IThongBaoRepository, ThongBaoRepository>();
+builder.Services.AddScoped<IThongBaoService, ThongBaoService>();
 // thanh toán
 builder.Services.AddScoped<IThanhToanRepository, ThanhToanRepository>();
 builder.Services.AddScoped<IThanhToanService, ThanhToanService>();

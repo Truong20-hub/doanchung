@@ -60,6 +60,9 @@ public partial class NguoiDung
     [InverseProperty("MaNguoiNhanNavigation")]
     public virtual ICollection<TinNhan> TinNhansDaNhan { get; set; } = new List<TinNhan>();
 
+    [InverseProperty("MaNguoiDungNavigation")]
+    public virtual ICollection<ThongBao> ThongBaos { get; set; } = new List<ThongBao>();
+
     [ForeignKey("MaVaiTro")]
     [InverseProperty("NguoiDungs")]
     public virtual VaiTro MaVaiTroNavigation { get; set; } = null!;

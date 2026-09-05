@@ -2,6 +2,7 @@ using AutoMapper;
 using DAL.Entities;
 using DTO.ChiTietHoaDon;
 using DTO.TinNhan;
+using DTO.ThongBao;
 
 namespace BLL.Mappings
 {
@@ -67,6 +68,35 @@ namespace BLL.Mappings
                 .ForMember(dest => dest.MaNguoiGuiNavigation, opt => opt.Ignore())
                 .ForMember(dest => dest.MaNguoiNhanNavigation, opt => opt.Ignore())
                 .ForMember(dest => dest.MaHocVienNavigation, opt => opt.Ignore());
+
+            CreateMap<ThongBao, ThongBaoResponse>()
+                .ForMember(dest => dest.TenNguoiDung,
+                    opt => opt.MapFrom(src => src.MaNguoiDungNavigation.HoTen))
+                .ForMember(dest => dest.HoTenHocVien,
+                    opt => opt.MapFrom(src => src.MaHocVienNavigation == null
+                        ? null
+                        : src.MaHocVienNavigation.HoTen))
+                .ForMember(dest => dest.TenLop,
+                    opt => opt.MapFrom(src => src.MaLopNavigation == null
+                        ? null
+                        : src.MaLopNavigation.TenLop));
+
+            CreateMap<CreateThongBaoRequest, ThongBao>()
+                .ForMember(dest => dest.MaThongBao, opt => opt.Ignore())
+                .ForMember(dest => dest.ThoiGianTao, opt => opt.Ignore())
+                .ForMember(dest => dest.DaDoc, opt => opt.Ignore())
+                .ForMember(dest => dest.MaNguoiDungNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaHocVienNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaLopNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaHoaDonNavigation, opt => opt.Ignore());
+
+            CreateMap<UpdateThongBaoRequest, ThongBao>()
+                .ForMember(dest => dest.MaThongBao, opt => opt.Ignore())
+                .ForMember(dest => dest.ThoiGianTao, opt => opt.Ignore())
+                .ForMember(dest => dest.MaNguoiDungNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaHocVienNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaLopNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaHoaDonNavigation, opt => opt.Ignore());
         }
     }
 }

@@ -69,6 +69,9 @@ public partial class HocVien
     [InverseProperty("MaHocVienNavigation")]
     public virtual ICollection<TinNhan> TinNhans { get; set; } = new List<TinNhan>();
 
+    [InverseProperty("MaHocVienNavigation")]
+    public virtual ICollection<ThongBao> ThongBaos { get; set; } = new List<ThongBao>();
+
     [ForeignKey("MaNguoiDung")]
     [InverseProperty("HocVien")]
     public virtual NguoiDung? MaNguoiDungNavigation { get; set; }

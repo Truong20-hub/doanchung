@@ -65,6 +65,9 @@ public partial class LopHoc
     [InverseProperty("MaLopNavigation")]
     public virtual ICollection<LichHoc> LichHocs { get; set; } = new List<LichHoc>();
 
+    [InverseProperty("MaLopNavigation")]
+    public virtual ICollection<ThongBao> ThongBaos { get; set; } = new List<ThongBao>();
+
     [ForeignKey("MaGiaoVien")]
     [InverseProperty("LopHocs")]
     public virtual GiaoVien? MaGiaoVienNavigation { get; set; }
