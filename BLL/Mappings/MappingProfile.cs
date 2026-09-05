@@ -1,6 +1,7 @@
 using AutoMapper;
 using DAL.Entities;
 using DTO.ChiTietHoaDon;
+using DTO.TinNhan;
 
 namespace BLL.Mappings
 {
@@ -43,6 +44,29 @@ namespace BLL.Mappings
                 .ForMember(dest => dest.MaChiTietHoaDon, opt => opt.Ignore())
                 .ForMember(dest => dest.MaHoaDonNavigation, opt => opt.Ignore())
                 .ForMember(dest => dest.ThanhTien, opt => opt.Ignore());
+
+            CreateMap<TinNhan, TinNhanResponse>()
+                .ForMember(dest => dest.TenNguoiGui,
+                    opt => opt.MapFrom(src => src.MaNguoiGuiNavigation.HoTen))
+                .ForMember(dest => dest.TenNguoiNhan,
+                    opt => opt.MapFrom(src => src.MaNguoiNhanNavigation.HoTen))
+                .ForMember(dest => dest.HoTenHocVien,
+                    opt => opt.MapFrom(src => src.MaHocVienNavigation.HoTen));
+
+            CreateMap<CreateTinNhanRequest, TinNhan>()
+                .ForMember(dest => dest.MaTinNhan, opt => opt.Ignore())
+                .ForMember(dest => dest.ThoiGianGui, opt => opt.Ignore())
+                .ForMember(dest => dest.DaDoc, opt => opt.Ignore())
+                .ForMember(dest => dest.MaNguoiGuiNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaNguoiNhanNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaHocVienNavigation, opt => opt.Ignore());
+
+            CreateMap<UpdateTinNhanRequest, TinNhan>()
+                .ForMember(dest => dest.MaTinNhan, opt => opt.Ignore())
+                .ForMember(dest => dest.ThoiGianGui, opt => opt.Ignore())
+                .ForMember(dest => dest.MaNguoiGuiNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaNguoiNhanNavigation, opt => opt.Ignore())
+                .ForMember(dest => dest.MaHocVienNavigation, opt => opt.Ignore());
         }
     }
 }

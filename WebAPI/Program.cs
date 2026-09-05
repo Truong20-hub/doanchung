@@ -84,6 +84,9 @@ builder.Services.AddScoped<IHoaDonService, HoaDonService>();
 // Chi tiết hóa đơn
 builder.Services.AddScoped<IChiTietHoaDonRepository, ChiTietHoaDonRepository>();
 builder.Services.AddScoped<IChiTietHoaDonService, ChiTietHoaDonService>();
+// Tin nhắn
+builder.Services.AddScoped<ITinNhanRepository, TinNhanRepository>();
+builder.Services.AddScoped<ITinNhanService, TinNhanService>();
 // thanh toán
 builder.Services.AddScoped<IThanhToanRepository, ThanhToanRepository>();
 builder.Services.AddScoped<IThanhToanService, ThanhToanService>();
