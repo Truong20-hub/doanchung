@@ -1,4 +1,4 @@
-﻿using BLL.Helpers;
+using BLL.Helpers;
 using BLL.Interfaces;
 using DAL.Entities;
 using DAL.Interfaces;
@@ -145,7 +145,7 @@ namespace BLL.Services
                 throw new Exception("Không tìm thấy giáo viên.");
 
             // Lấy người dùng
-            var nguoiDung = await _nguoiDungRepository.GetByIdAsync(giaoVien.MaNguoiDung.Value);
+            var nguoiDung = await _nguoiDungRepository.GetByIdAsync(giaoVien.MaNguoiDung);
 
             if (nguoiDung == null)
                 throw new Exception("Không tìm thấy người dùng.");

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DAL.Entities;
 
 [Table("hoc_vien")]
-[Index("MaNguoiDung", Name = "UQ__hoc_vien__19C32CF6D07AA977", IsUnique = true)]
+[Index("MaNguoiDung", Name = "UQ_hocvien_nguoidung", IsUnique = true)]
 public partial class HocVien
 {
     [Key]
@@ -15,11 +15,7 @@ public partial class HocVien
     public int MaHocVien { get; set; }
 
     [Column("ma_nguoi_dung")]
-    public int? MaNguoiDung { get; set; }
-
-    [Column("ho_ten")]
-    [StringLength(100)]
-    public string HoTen { get; set; } = null!;
+    public int MaNguoiDung { get; set; }
 
     [Column("gioi_tinh")]
     [StringLength(10)]
@@ -27,14 +23,6 @@ public partial class HocVien
 
     [Column("ngay_sinh")]
     public DateOnly? NgaySinh { get; set; }
-
-    [Column("so_dien_thoai")]
-    [StringLength(20)]
-    public string? SoDienThoai { get; set; }
-
-    [Column("email")]
-    [StringLength(100)]
-    public string? Email { get; set; }
 
     [Column("dia_chi")]
     [StringLength(255)]
@@ -51,8 +39,50 @@ public partial class HocVien
     [Column("ngay_nhap_hoc")]
     public DateOnly? NgayNhapHoc { get; set; }
 
-    [Column("dang_hoat_dong")]
-    public bool? DangHoatDong { get; set; }
+    // Helper properties mapped to NguoiDung
+    [NotMapped]
+    public string HoTen
+    {
+        get => MaNguoiDungNavigation?.HoTen ?? string.Empty;
+        set
+        {
+            if (MaNguoiDungNavigation != null)
+                MaNguoiDungNavigation.HoTen = value;
+        }
+    }
+
+    [NotMapped]
+    public string? Email
+    {
+        get => MaNguoiDungNavigation?.Email;
+        set
+        {
+            if (MaNguoiDungNavigation != null)
+                MaNguoiDungNavigation.Email = value;
+        }
+    }
+
+    [NotMapped]
+    public string? SoDienThoai
+    {
+        get => MaNguoiDungNavigation?.SoDienThoai;
+        set
+        {
+            if (MaNguoiDungNavigation != null)
+                MaNguoiDungNavigation.SoDienThoai = value;
+        }
+    }
+
+    [NotMapped]
+    public bool DangHoatDong
+    {
+        get => MaNguoiDungNavigation?.DangHoatDong ?? true;
+        set
+        {
+            if (MaNguoiDungNavigation != null)
+                MaNguoiDungNavigation.DangHoatDong = value;
+        }
+    }
 
     [InverseProperty("MaHocVienNavigation")]
     public virtual ICollection<DangKyHoc> DangKyHocs { get; set; } = new List<DangKyHoc>();
@@ -62,6 +92,9 @@ public partial class HocVien
 
     [InverseProperty("MaHocVienNavigation")]
     public virtual ICollection<DiemThi> DiemThis { get; set; } = new List<DiemThi>();
+
+    [InverseProperty("MaHocVienNavigation")]
+    public virtual ICollection<Diem> Diems { get; set; } = new List<Diem>();
 
     [InverseProperty("MaHocVienNavigation")]
     public virtual ICollection<HoaDon> HoaDons { get; set; } = new List<HoaDon>();
@@ -74,5 +107,5 @@ public partial class HocVien
 
     [ForeignKey("MaNguoiDung")]
     [InverseProperty("HocVien")]
-    public virtual NguoiDung? MaNguoiDungNavigation { get; set; }
+    public virtual NguoiDung MaNguoiDungNavigation { get; set; } = null!;
 }

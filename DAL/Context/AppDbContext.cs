@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -51,6 +51,10 @@ public partial class AppDbContext : DbContext
     public virtual DbSet<ThanhToan> ThanhToans { get; set; }
 
     public virtual DbSet<VaiTro> VaiTros { get; set; }
+
+    public virtual DbSet<BaiTap> BaiTaps { get; set; }
+
+    public virtual DbSet<Diem> Diems { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -105,11 +109,11 @@ public partial class AppDbContext : DbContext
 
         modelBuilder.Entity<GiaoVien>(entity =>
         {
-            entity.HasKey(e => e.MaGiaoVien).HasName("PK__giao_vie__35A328F5074A384B");
+            entity.HasKey(e => e.MaGiaoVien).HasName("PK_giao_vien");
 
-            entity.Property(e => e.DangHoatDong).HasDefaultValue(true);
-
-            entity.HasOne(d => d.MaNguoiDungNavigation).WithOne(p => p.GiaoVien).HasConstraintName("fk_giaovien_nguoidung");
+            entity.HasOne(d => d.MaNguoiDungNavigation).WithOne(p => p.GiaoVien)
+                .HasForeignKey<GiaoVien>(d => d.MaNguoiDung)
+                .HasConstraintName("fk_giaovien_nguoidung");
         });
 
         modelBuilder.Entity<HoaDon>(entity =>
@@ -205,12 +209,13 @@ public partial class AppDbContext : DbContext
 
         modelBuilder.Entity<HocVien>(entity =>
         {
-            entity.HasKey(e => e.MaHocVien).HasName("PK__hoc_vien__62B18A1135DC3BF0");
+            entity.HasKey(e => e.MaHocVien).HasName("PK_hoc_vien");
 
-            entity.Property(e => e.DangHoatDong).HasDefaultValue(true);
             entity.Property(e => e.NgayNhapHoc).HasDefaultValueSql("(CONVERT([date],getdate()))");
 
-            entity.HasOne(d => d.MaNguoiDungNavigation).WithOne(p => p.HocVien).HasConstraintName("fk_hocvien_nguoidung");
+            entity.HasOne(d => d.MaNguoiDungNavigation).WithOne(p => p.HocVien)
+                .HasForeignKey<HocVien>(d => d.MaNguoiDung)
+                .HasConstraintName("fk_hocvien_nguoidung");
         });
 
         modelBuilder.Entity<KhoaHoc>(entity =>
@@ -287,6 +292,46 @@ public partial class AppDbContext : DbContext
         modelBuilder.Entity<VaiTro>(entity =>
         {
             entity.HasKey(e => e.MaVaiTro).HasName("PK__vai_tro__4AE1754D5670477B");
+        });
+
+        modelBuilder.Entity<BaiTap>(entity =>
+        {
+            entity.HasKey(e => e.MaBaiTap).HasName("PK_bai_tap");
+
+            entity.ToTable("bai_tap");
+
+            entity.Property(e => e.NgayGiao).HasDefaultValueSql("(CONVERT([date],getdate()))");
+
+            entity.HasOne(d => d.MaBuoiNavigation).WithMany(p => p.BaiTaps)
+                .HasForeignKey(d => d.MaBuoi)
+                .HasConstraintName("fk_baitap_buoi");
+
+            entity.HasOne(d => d.MaGiaoVienNavigation).WithMany(p => p.BaiTaps)
+                .HasForeignKey(d => d.MaGiaoVien)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_baitap_giaovien");
+
+            entity.HasOne(d => d.MaLopNavigation).WithMany(p => p.BaiTaps)
+                .HasForeignKey(d => d.MaLop)
+                .HasConstraintName("fk_baitap_lop");
+        });
+
+        modelBuilder.Entity<Diem>(entity =>
+        {
+            entity.HasKey(e => e.MaDiem).HasName("PK_diem");
+
+            entity.ToTable("diem");
+
+            entity.Property(e => e.TrangThaiNop).HasDefaultValue("ChuaNop");
+
+            entity.HasOne(d => d.MaBaiTapNavigation).WithMany(p => p.Diems)
+                .HasForeignKey(d => d.MaBaiTap)
+                .HasConstraintName("fk_diem_baitap");
+
+            entity.HasOne(d => d.MaHocVienNavigation).WithMany(p => p.Diems)
+                .HasForeignKey(d => d.MaHocVien)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_diem_hocvien");
         });
 
         OnModelCreatingPartial(modelBuilder);

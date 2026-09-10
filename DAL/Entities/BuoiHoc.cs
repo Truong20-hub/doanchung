@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,6 +35,9 @@ public partial class BuoiHoc
 
     [InverseProperty("MaBuoiNavigation")]
     public virtual ICollection<DiemDanh> DiemDanhs { get; set; } = new List<DiemDanh>();
+
+    [InverseProperty("MaBuoiNavigation")]
+    public virtual ICollection<BaiTap> BaiTaps { get; set; } = new List<BaiTap>();
 
     [ForeignKey("MaLop")]
     [InverseProperty("BuoiHocs")]
