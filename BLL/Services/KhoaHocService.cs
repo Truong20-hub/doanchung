@@ -165,16 +165,21 @@ namespace BLL.Services
                     "Tên khóa học đã tồn tại trong hệ thống.");
             }
             // 3. Kiểm tra mã code
-            bool codeExists = await _khoaHocRepository
-                .ExistsByMaCodeAsync(request.MaCode);
-            if (codeExists) { 
-                throw new Exception("Mã code đã tồn tại trong hệ thống.");
-            } 
+            var maCode = request.MaCode?.Trim();
+            if (!string.IsNullOrWhiteSpace(maCode))
+            {
+                bool codeExists = await _khoaHocRepository
+                    .ExistsByMaCodeAsync(maCode);
+                if (codeExists)
+                {
+                    throw new Exception("Mã code đã tồn tại trong hệ thống.");
+                }
+            }
 
             var khoaHoc = new KhoaHoc
             {
                 TenKhoaHoc = request.TenKhoaHoc,
-                MaCode = request.MaCode,
+                MaCode = maCode,
                 TrinhDo = request.TrinhDo,
                 MoTa = request.MoTa,
                 TongSoBuoi = request.TongSoBuoi,
