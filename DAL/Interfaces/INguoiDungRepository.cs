@@ -1,4 +1,5 @@
 using DAL.Entities;
+using DTO.result;
 
 namespace DAL.Interfaces
 {
@@ -15,7 +16,7 @@ namespace DAL.Interfaces
         // cập nhật người dùng
         Task UpdateAsync(NguoiDung nguoiDung);
         // xóa người dùng
-        Task DeleteAsync(int id);
+        Task<result> DeleteAsync(int id);
         // Lưu thay đổi
         Task SaveChangesAsync();
         Task<NguoiDung?> LoginAsync(string tenDangNhap);
@@ -33,6 +34,8 @@ namespace DAL.Interfaces
         Task<bool> ExistsByUserNameAsync(string tenDangNhap, int maNguoiDung);
         // kiểm tra số điện thoại có tồn tại hay không, ngoại trừ người dùng có id = maNguoiDung
         Task<bool> ExistsBySoDienThoaiAsync(string soDienThoai, int maNguoiDung);
+        // kiểm tra mã người dùng có là khóa ngoại của bảng khác hay không
+        Task<bool> IsForeignKeyAsync(int maNguoiDung);
 
     }
 }

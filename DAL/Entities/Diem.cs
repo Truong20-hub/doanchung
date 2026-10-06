@@ -36,6 +36,13 @@ public partial class Diem
     [StringLength(500)]
     public string? NhanXet { get; set; }
 
+    [Column("ghi_chu_nop")]
+    [StringLength(1000)]
+    public string? GhiChuNop { get; set; }
+
+    [Column("tep_nop", TypeName = "nvarchar(max)")]
+    public string? TepNopJson { get; set; }
+
     [ForeignKey("MaBaiTap")]
     [InverseProperty("Diems")]
     public virtual BaiTap MaBaiTapNavigation { get; set; } = null!;

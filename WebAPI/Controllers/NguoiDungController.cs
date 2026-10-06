@@ -1,6 +1,7 @@
 using BLL.Interfaces;
 using DTO.Auth;
 using DTO.NguoiDung;
+using DTO.result;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,6 +39,18 @@ namespace WebAPI.Controllers
             return Ok(result);
         }
 
+        // lấy người dùng theo tên đăng nhập
+        // GET: api/NguoiDung/by-username?namelogin=hv_giaan2
+        [HttpGet("by-username")]
+        public async Task<IActionResult> GetByNameLogin([FromQuery] string namelogin)
+        {
+            var result = await _nguoiDungService.GetByNamelogin(namelogin);
+
+            if (result == null)
+                return NotFound("Không tìm thấy người dùng.");
+
+            return Ok(result);
+        }
         // POST: api/NguoiDung
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateNguoiDungRequest request)
@@ -60,17 +73,30 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _nguoiDungService.DeleteAsync(id);
+            result r = await _nguoiDungService.DeleteAsync(id);
 
-            return Ok("Xóa người dùng thành công.");
+            if (r.success)
+                return NotFound("" + r.message);
+
+            return Ok(r.message);
         }
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginResquest request)
         {
-            var result = await _nguoiDungService.LoginAsync(request);
+            try
+            {
+                var result = await _nguoiDungService.LoginAsync(request);
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch (Exception ex)      // bắt mọi lỗi, ex chứa thông tin lỗi
+            {
+                // xử lý lỗi
+                return Unauthorized(new { message = ex.Message });
+            }
+
+
         }
     }
 }

@@ -83,13 +83,6 @@ namespace DAL.Interfaces
         // TÌM KIẾM + PHÂN TRANG
         // =========================================================
 
-        // Theo mã người dùng + phân trang
-        Task<(IEnumerable<HocVien> Data, int TotalCount)>
-            GetByNguoiDungIdPagedAsync(
-                int maNguoiDung,
-                int pageNumber,
-                int pageSize);
-
         // Theo tên học viên + phân trang
         Task<(IEnumerable<HocVien> Data, int TotalCount)>
             GetByNamePagedAsync(
@@ -131,6 +124,10 @@ namespace DAL.Interfaces
                 string keyword,
                 int pageNumber,
                 int pageSize);
+        // kiểm tra học viên là khóa ngoại của bảng nào ko
+        Task<bool> IsForeignKeyAsync(int maHocVien);
+
+
 
 
         // =========================================================

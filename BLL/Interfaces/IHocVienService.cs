@@ -84,12 +84,6 @@ namespace BLL.Interfaces
         // TỪNG TIÊU CHÍ + PHÂN TRANG
         // =========================================================
 
-        // Mã người dùng + phân trang
-        Task<object> GetByNguoiDungIdPagedAsync(
-            int maNguoiDung,
-            int pageNumber,
-            int pageSize);
-
         // Tên học viên + phân trang
         Task<object> GetByNamePagedAsync(
             string name,
@@ -114,12 +108,12 @@ namespace BLL.Interfaces
             int pageNumber,
             int pageSize);
 
+
         // Email + phân trang
         Task<object> GetByEmailPagedAsync(
             string email,
             int pageNumber,
             int pageSize);
-
 
         // =========================================================
         // TÌM KIẾM + PHÂN TRANG

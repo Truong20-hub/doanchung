@@ -1,5 +1,7 @@
+using DAL.Entities;
 using DTO.Auth;
 using DTO.NguoiDung;
+using DTO.result;
 
 namespace BLL.Interfaces
 {
@@ -10,6 +12,8 @@ namespace BLL.Interfaces
 
         // Lấy người dùng theo ID
         Task<NguoiDungResponse?> GetByIdAsync(int id);
+        // lấy người dùng theo tên đăng nhập
+        Task<NguoiDungResponse?> GetByNamelogin(string NameLogin); 
 
         // Thêm người dùng
         Task CreateAsync(CreateNguoiDungRequest request);
@@ -18,7 +22,7 @@ namespace BLL.Interfaces
         Task UpdateAsync(int id, UpdateNguoiDungRequest request);
 
         // Xóa người dùng
-        Task DeleteAsync(int id);
+        Task<result> DeleteAsync(int id);
         Task<LoginResponse> LoginAsync(LoginResquest request);
     }
 }

@@ -73,21 +73,16 @@ namespace BLL.Services
 
         public async Task<ChiTietHoaDonResponse> CreateAsync(CreateChiTietHoaDonRequest request)
         {
+            ValidateDetails(request.LoaiKhoan, request.MoTa, request.SoLuong, request.DonGia, request.GhiChu);
+
             var hoaDon = await _hoaDonRepository.GetByIdAsync(request.MaHoaDon);
             if (hoaDon == null)
             {
                 throw new KeyNotFoundException($"Hóa đơn có mã {request.MaHoaDon} không tồn tại.");
             }
 
-            if (request.SoLuong <= 0)
-                throw new ArgumentException("Số lượng phải lớn hơn 0.");
-
-            if (request.DonGia < 0)
-                throw new ArgumentException("Đơn giá không được âm.");
-
             var entity = _mapper.Map<ChiTietHoaDon>(request);
             entity.MaHoaDon = request.MaHoaDon;
-            entity.ThanhTien = request.SoLuong * request.DonGia;
             entity.MaHoaDonNavigation = hoaDon;
 
             var result = await _repository.AddAsync(entity);
@@ -97,6 +92,8 @@ namespace BLL.Services
 
         public async Task<ChiTietHoaDonResponse?> UpdateAsync(int id, UpdateChiTietHoaDonRequest request)
         {
+            ValidateDetails(request.LoaiKhoan, request.MoTa, request.SoLuong, request.DonGia, request.GhiChu);
+
             var existing = await _repository.GetByIdAsync(id);
             if (existing == null)
                 return null;
@@ -107,15 +104,8 @@ namespace BLL.Services
                 throw new KeyNotFoundException($"Hóa đơn có mã {request.MaHoaDon} không tồn tại.");
             }
 
-            if (request.SoLuong <= 0)
-                throw new ArgumentException("Số lượng phải lớn hơn 0.");
-
-            if (request.DonGia < 0)
-                throw new ArgumentException("Đơn giá không được âm.");
-
             _mapper.Map(request, existing);
             existing.MaHoaDon = request.MaHoaDon;
-            existing.ThanhTien = request.SoLuong * request.DonGia;
             existing.MaHoaDonNavigation = hoaDon;
 
             var updated = await _repository.UpdateAsync(existing);
@@ -143,6 +133,29 @@ namespace BLL.Services
 
             if (pageSize > 100)
                 throw new ArgumentException("PageSize không được lớn hơn 100.");
+        }
+
+        private static void ValidateDetails(
+            string? loaiKhoan,
+            string? moTa,
+            int soLuong,
+            decimal donGia,
+            string? ghiChu)
+        {
+            if (loaiKhoan is not ("HocPhi" or "GiaoTrinh" or "LePhiThi" or "Khac"))
+                throw new ArgumentException("Loại khoản không hợp lệ.");
+
+            if (string.IsNullOrWhiteSpace(moTa) || moTa.Length > 255)
+                throw new ArgumentException("Mô tả không được để trống hoặc vượt quá 255 ký tự.");
+
+            if (soLuong <= 0)
+                throw new ArgumentException("Số lượng phải lớn hơn 0.");
+
+            if (donGia < 0 || donGia > 9999999999.99m)
+                throw new ArgumentException("Đơn giá phải từ 0 đến 9999999999.99.");
+
+            if (ghiChu?.Length > 255)
+                throw new ArgumentException("Ghi chú không được vượt quá 255 ký tự.");
         }
     }
 }

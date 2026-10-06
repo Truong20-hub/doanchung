@@ -1,4 +1,5 @@
 using BLL.Interfaces;
+using BLL.Helpers;
 using DAL.Entities;
 using DAL.Interfaces;
 using DTO.HocVien;
@@ -52,85 +53,22 @@ namespace BLL.Services
         public async Task<HocVienResponse> CreateAsync(
             CreateHocVienRequest request)
         {
-            // -----------------------------------------------------
-            // 1. Kiểm tra tên đăng nhập
-            // -----------------------------------------------------
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
 
-            var nguoiDungs =
-                await _nguoiDungRepository.GetAllAsync();
+            var nguoiDung =
+                await _nguoiDungRepository.GetByIdAsync(request.MaNguoiDung);
 
-            var usernameExists = nguoiDungs.Any(x =>
-                x.TenDangNhap.Equals(
-                    request.TenDangNhap,
-                    StringComparison.OrdinalIgnoreCase));
+            if (nguoiDung == null)
+                throw new ArgumentException("Mã người dùng không tồn tại.");
 
-            if (usernameExists)
-            {
-                throw new Exception(
-                    "Tên đăng nhập đã tồn tại trong hệ thống.");
-            }
+            if (!string.IsNullOrWhiteSpace(nguoiDung.Email))
+                ValidationHelper.CheckEmail(nguoiDung.Email);
 
-            // -----------------------------------------------------
-            // 2. Kiểm tra email
-            // -----------------------------------------------------
+            if (!string.IsNullOrWhiteSpace(request.SdtPhuHuynh))
+                ValidationHelper.CheckPhone(request.SdtPhuHuynh);
 
-            if (!string.IsNullOrWhiteSpace(request.Email))
-            {
-                var emailExists = nguoiDungs.Any(x =>
-                    x.Email != null &&
-                    x.Email.Equals(
-                        request.Email,
-                        StringComparison.OrdinalIgnoreCase));
-
-                if (emailExists)
-                {
-                    throw new Exception(
-                        "Email đã tồn tại trong hệ thống.");
-                }
-            }
-
-            // -----------------------------------------------------
-            // 3. Kiểm tra vai trò
-            // -----------------------------------------------------
-
-            var vaiTro =
-                await _vaiTroRepository.GetVaiTroByIdAsync(
-                    request.MaVaiTro);
-
-            if (vaiTro == null)
-            {
-                throw new Exception(
-                    "Vai trò không tồn tại.");
-            }
-
-            // -----------------------------------------------------
-            // 4. Tạo tài khoản người dùng
-            // -----------------------------------------------------
-
-            NguoiDung nguoiDung = new NguoiDung
-            {
-                TenDangNhap = request.TenDangNhap,
-
-                MatKhauHash = request.MatKhau,
-
-                HoTen = request.HoTen,
-
-                Email = request.Email,
-
-                SoDienThoai = request.SoDienThoai,
-
-                MaVaiTro = request.MaVaiTro,
-
-                AvatarUrl = request.AvatarUrl,
-
-                DangHoatDong = request.DangHoatDong,
-
-                NgayTao = DateTime.Now
-            };
-            await _nguoiDungRepository.AddAsync(nguoiDung);
-
-            // Lưu để lấy MaNguoiDung
-            await _nguoiDungRepository.SaveChangesAsync();
+            ValidationHelper.CheckBirthDate(request.NgaySinh);
 
             // -----------------------------------------------------
             // 5. Kiểm tra người dùng đã là học viên chưa
@@ -139,7 +77,7 @@ namespace BLL.Services
             var daLaHocVien =
                 await _hocVienRepository
                     .ExistsByNguoiDungIdAsync(
-                        nguoiDung.MaNguoiDung);
+                        request.MaNguoiDung);
 
             if (daLaHocVien)
             {
@@ -153,17 +91,11 @@ namespace BLL.Services
 
             var hocVien = new HocVien
             {
-                MaNguoiDung = nguoiDung.MaNguoiDung,
-
-                HoTen = request.HoTen,
+                MaNguoiDung = request.MaNguoiDung,
 
                 GioiTinh = request.GioiTinh,
 
                 NgaySinh = request.NgaySinh,
-
-                SoDienThoai = request.SoDienThoai,
-
-                Email = request.Email,
 
                 DiaChi = request.DiaChi,
 
@@ -172,8 +104,6 @@ namespace BLL.Services
                 SdtPhuHuynh = request.SdtPhuHuynh,
 
                 NgayNhapHoc = request.NgayNhapHoc,
-
-                DangHoatDong = request.DangHoatDong
             };
 
             var hocVienMoi =
@@ -182,10 +112,11 @@ namespace BLL.Services
             // Lưu học viên
             await _hocVienRepository.SaveChangesAsync();
 
-            // Gắn navigation để trả về thông tin tài khoản
-            hocVienMoi.MaNguoiDungNavigation = nguoiDung;
+            var hocVienDaTao =
+                await _hocVienRepository.GetByIdAsync(
+                    hocVienMoi.MaHocVien);
 
-            return MapToResponse(hocVienMoi);
+            return MapToResponse(hocVienDaTao!);
         }
 
         // =========================================================
@@ -200,30 +131,13 @@ namespace BLL.Services
                 await _hocVienRepository.GetByIdAsync(id);
 
             if (hocVien == null)
-                return null;
+                throw new ArgumentException("Học viên không tồn tại.");
 
-            // -----------------------------------------------------
-            // Kiểm tra email
-            // -----------------------------------------------------
+            if (!string.IsNullOrWhiteSpace(request.SdtPhuHuynh))
+                ValidationHelper.CheckPhone(request.SdtPhuHuynh);
 
-            if (!string.IsNullOrWhiteSpace(request.Email))
-            {
-                var nguoiDungs =
-                    await _nguoiDungRepository.GetAllAsync();
+            ValidationHelper.CheckBirthDate(request.NgaySinh);
 
-                var emailExists = nguoiDungs.Any(x =>
-                    x.Email != null &&
-                    x.Email.Equals(
-                        request.Email,
-                        StringComparison.OrdinalIgnoreCase) &&
-                    x.MaNguoiDung != hocVien.MaNguoiDung);
-
-                if (emailExists)
-                {
-                    throw new Exception(
-                        "Email đã tồn tại trong hệ thống.");
-                }
-            }
 
             // -----------------------------------------------------
             // Tạo entity cập nhật
@@ -231,15 +145,9 @@ namespace BLL.Services
 
             var entity = new HocVien
             {
-                HoTen = request.HoTen,
-
                 GioiTinh = request.GioiTinh,
 
                 NgaySinh = request.NgaySinh,
-
-                SoDienThoai = request.SoDienThoai,
-
-                Email = request.Email,
 
                 DiaChi = request.DiaChi,
 
@@ -248,8 +156,6 @@ namespace BLL.Services
                 SdtPhuHuynh = request.SdtPhuHuynh,
 
                 NgayNhapHoc = request.NgayNhapHoc,
-
-                DangHoatDong = request.DangHoatDong
             };
 
             var updated =
@@ -271,6 +177,12 @@ namespace BLL.Services
 
         public async Task<bool> DeleteAsync(int id)
         {
+            // kiểm tra học viên có là khóa ngoại của bảng nào ko
+            var isForeignKey =
+                await _hocVienRepository.IsForeignKeyAsync(id);
+            if (isForeignKey)
+                throw new Exception(
+                    "Không thể xóa học viên này vì nó đang được tham chiếu bởi các bản ghi khác.");
             var hocVien =
                 await _hocVienRepository.GetByIdAsync(id);
 
@@ -282,8 +194,16 @@ namespace BLL.Services
 
             if (!result)
                 return false;
+            try
+            {
+                await _hocVienRepository.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(
+                    "Lỗi khi lưu thay đổi vào cơ sở dữ liệu: " + ex.Message);
+            }
 
-            await _hocVienRepository.SaveChangesAsync();
 
             return true;
         }
@@ -295,6 +215,12 @@ namespace BLL.Services
         public async Task<IEnumerable<HocVienResponse>>
             GetByNguoiDungIdAsync(int maNguoiDung)
         {
+            // Kiểm tra người dùng có tồn tại hay không
+            bool nguoiDungExists =
+                await _nguoiDungRepository
+                    .ExistsByIdAsync(maNguoiDung);
+            if (!nguoiDungExists)
+                throw new Exception("Người dùng không tồn tại.");
             var hocViens =
                 await _hocVienRepository
                     .GetByNguoiDungIdAsync(maNguoiDung);
@@ -430,39 +356,6 @@ namespace BLL.Services
                     .Select(MapToResponse)
                     .ToList()
             };
-        }
-
-        // =========================================================
-        // MÃ NGƯỜI DÙNG + PHÂN TRANG
-        // =========================================================
-
-        public async Task<object>
-            GetByNguoiDungIdPagedAsync(
-                int maNguoiDung,
-                int pageNumber,
-                int pageSize)
-        {
-            if (pageNumber < 1)
-                pageNumber = 1;
-
-            if (pageSize < 1)
-                pageSize = 10;
-
-            if (pageSize > 100)
-                pageSize = 100;
-
-            var result =
-                await _hocVienRepository
-                    .GetByNguoiDungIdPagedAsync(
-                        maNguoiDung,
-                        pageNumber,
-                        pageSize);
-
-            return CreatePagedResult(
-                result.Data,
-                result.TotalCount,
-                pageNumber,
-                pageSize);
         }
 
         // =========================================================
@@ -697,8 +590,7 @@ namespace BLL.Services
         // MAPPING
         // =========================================================
 
-        private static HocVienResponse MapToResponse(
-            HocVien hocVien)
+        private static HocVienResponse MapToResponse(HocVien hocVien)
         {
             return new HocVienResponse
             {
@@ -706,15 +598,23 @@ namespace BLL.Services
 
                 MaNguoiDung = hocVien.MaNguoiDung,
 
-                HoTen = hocVien.HoTen,
+                // Thông tin người dùng
+                HoTen = hocVien.MaNguoiDungNavigation?.HoTen ?? string.Empty,
 
+                Email = hocVien.MaNguoiDungNavigation?.Email,
+
+                SoDienThoai = hocVien.MaNguoiDungNavigation?.SoDienThoai,
+
+                DangHoatDong = hocVien.MaNguoiDungNavigation?.DangHoatDong ?? true,
+
+                TenDangNhap = hocVien.MaNguoiDungNavigation?.TenDangNhap ?? string.Empty,
+
+                AvatarUrl = hocVien.MaNguoiDungNavigation?.AvatarUrl,
+
+                // Thông tin học viên
                 GioiTinh = hocVien.GioiTinh,
 
                 NgaySinh = hocVien.NgaySinh,
-
-                SoDienThoai = hocVien.SoDienThoai,
-
-                Email = hocVien.Email,
 
                 DiaChi = hocVien.DiaChi,
 
@@ -722,17 +622,7 @@ namespace BLL.Services
 
                 SdtPhuHuynh = hocVien.SdtPhuHuynh,
 
-                NgayNhapHoc = hocVien.NgayNhapHoc,
-
-                DangHoatDong = hocVien.DangHoatDong,
-
-                TenDangNhap =
-                    hocVien.MaNguoiDungNavigation
-                        ?.TenDangNhap,
-
-                AvatarUrl =
-                    hocVien.MaNguoiDungNavigation
-                        ?.AvatarUrl
+                NgayNhapHoc = hocVien.NgayNhapHoc
             };
         }
     }

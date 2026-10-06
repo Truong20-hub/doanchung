@@ -191,20 +191,29 @@ public partial class AppDbContext : DbContext
 
         modelBuilder.Entity<ChiTietHoaDon>(entity =>
         {
-            entity.HasKey(e => e.MaChiTietHoaDon).HasName("PK__chi_tiet_hoa_don__1A2B3C4D5E6F7G8H");
+            entity.HasKey(e => e.MaChiTietHoaDon).HasName("PK_chi_tiet_hoa_don");
 
-            entity.ToTable("chi_tiet_hoa_don");
+            entity.ToTable("chi_tiet_hoa_don", table =>
+            {
+                table.HasCheckConstraint("ck_cthd_loaikhoan", "[loai_khoan] IN (N'HocPhi', N'GiaoTrinh', N'LePhiThi', N'Khac')");
+                table.HasCheckConstraint("ck_cthd_soluong", "[so_luong] > 0");
+                table.HasCheckConstraint("ck_cthd_dongia", "[don_gia] >= 0");
+            });
 
-            entity.Property(e => e.SoLuong).IsRequired();
+            entity.Property(e => e.LoaiKhoan).HasMaxLength(20).HasDefaultValue("HocPhi").IsRequired();
+            entity.Property(e => e.MoTa).HasMaxLength(255).IsRequired();
+            entity.Property(e => e.SoLuong).HasDefaultValue(1).IsRequired();
             entity.Property(e => e.DonGia).HasColumnType("decimal(12, 2)").IsRequired();
-            entity.Property(e => e.ThanhTien).HasColumnType("decimal(12, 2)").IsRequired();
+            entity.Property(e => e.ThanhTien)
+                .HasColumnType("decimal(23, 2)")
+                .HasComputedColumnSql("([so_luong] * [don_gia])", stored: true);
             entity.Property(e => e.GhiChu).HasMaxLength(255);
 
             entity.HasOne(d => d.MaHoaDonNavigation)
                 .WithMany(p => p.ChiTietHoaDons)
                 .HasForeignKey(d => d.MaHoaDon)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_chitiet_hoadon_hoadon");
+                .HasConstraintName("fk_cthd_hoadon");
         });
 
         modelBuilder.Entity<HocVien>(entity =>

@@ -12,10 +12,14 @@ namespace WebAPI.Controllers
     public class ChiTietHoaDonController : ControllerBase
     {
         private readonly IChiTietHoaDonService _service;
+        private readonly ILogger<ChiTietHoaDonController> _logger;
 
-        public ChiTietHoaDonController(IChiTietHoaDonService service)
+        public ChiTietHoaDonController(
+            IChiTietHoaDonService service,
+            ILogger<ChiTietHoaDonController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -27,11 +31,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi lấy danh sách chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi lấy danh sách chi tiết hóa đơn.");
             }
         }
 
@@ -44,11 +44,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi tìm kiếm chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi tìm kiếm chi tiết hóa đơn.");
             }
         }
 
@@ -67,11 +63,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi phân trang chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi phân trang chi tiết hóa đơn.");
             }
         }
 
@@ -91,11 +83,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi tìm kiếm và phân trang chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi tìm kiếm và phân trang chi tiết hóa đơn.");
             }
         }
 
@@ -121,11 +109,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi lấy chi tiết hóa đơn theo hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi lấy chi tiết hóa đơn theo hóa đơn.");
             }
         }
 
@@ -153,11 +137,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi lấy chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi lấy chi tiết hóa đơn.");
             }
         }
 
@@ -193,11 +173,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi tạo chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi tạo chi tiết hóa đơn.");
             }
         }
 
@@ -240,11 +216,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi cập nhật chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi cập nhật chi tiết hóa đơn.");
             }
         }
 
@@ -274,12 +246,14 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
-                {
-                    message = "Lỗi khi xóa chi tiết hóa đơn.",
-                    detail = ex.Message
-                });
+                return InternalServerError(ex, "Lỗi khi xóa chi tiết hóa đơn.");
             }
+        }
+
+        private ObjectResult InternalServerError(Exception exception, string message)
+        {
+            _logger.LogError(exception, "{Message}", message);
+            return StatusCode(500, new { message });
         }
     }
 }

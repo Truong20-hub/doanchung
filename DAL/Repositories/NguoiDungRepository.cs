@@ -1,6 +1,7 @@
 using DAL.Context;
 using DAL.Entities;
 using DAL.Interfaces;
+using DTO.result;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
@@ -31,7 +32,9 @@ namespace DAL.Repositories
         public async Task<NguoiDung?> GetByUserNameAsync(string userName)
         {
             return await _context.NguoiDungs
+                .Include(x => x.MaVaiTroNavigation)
                 .FirstOrDefaultAsync(x => x.TenDangNhap == userName);
+
         }
         // thêm người dùng
         public async Task AddAsync(NguoiDung nguoiDung)
@@ -45,14 +48,26 @@ namespace DAL.Repositories
             await Task.CompletedTask;
         }
         // xóa người dùng
-        public async Task DeleteAsync(int id)
+        public async Task<result> DeleteAsync(int id)
         {
+            var r = new result(false, "Xóa người dùng thất bại", null);
             var nguoiDung = await GetByIdAsync(id);
 
-            if (nguoiDung != null)
+            if (nguoiDung == null)
             {
-                _context.NguoiDungs.Remove(nguoiDung);
+                r.message = "Không tìm thấy người dùng.";
+                return r;
             }
+            else if (await IsForeignKeyAsync(id))
+            {
+                r.message = "Người dùng đang được sử dụng ở bảng khác, không thể xóa.";
+                return r;
+            }
+
+            _context.NguoiDungs.Remove(nguoiDung);
+            r = new result(true, "Xóa người dùng thành công", null);
+
+            return r;
         }
         // Lưu thay đổi
         public async Task SaveChangesAsync()
@@ -64,6 +79,8 @@ namespace DAL.Repositories
         {
             return await _context.NguoiDungs
                 .Include(x => x.MaVaiTroNavigation)
+                .Include(x => x.HocVien)
+                .Include(x => x.GiaoVien)
                 .FirstOrDefaultAsync(x => x.TenDangNhap == tenDangNhap
                                        && x.DangHoatDong == true);
         }
@@ -110,6 +127,14 @@ namespace DAL.Repositories
         {
             return await _context.NguoiDungs
                 .AnyAsync(x => x.SoDienThoai == soDienThoai && x.MaNguoiDung != maNguoiDung);
+        }
+        // kiểm tra mã người dùng có là khóa ngoại của bảng khác hay không
+        public async Task<bool> IsForeignKeyAsync(int maNguoiDung)
+        {
+            return await _context.HocViens.AnyAsync(x => x.MaNguoiDung == maNguoiDung)
+                || await _context.GiaoViens.AnyAsync(x => x.MaNguoiDung == maNguoiDung)
+                || await _context.TinNhans.AnyAsync(x => x.MaNguoiGui == maNguoiDung)
+                || await _context.ThongBaos.AnyAsync(x => x.MaNguoiDung == maNguoiDung);
         }
 
     }

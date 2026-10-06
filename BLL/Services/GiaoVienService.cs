@@ -5,6 +5,7 @@ using DAL.Interfaces;
 using DTO.Comon;
 using DTO.GiaoVien;
 using DTO.NguoiDung;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Writers;
 
 namespace BLL.Services
@@ -13,13 +14,16 @@ namespace BLL.Services
     {
         private readonly IGiaoVienRepository _giaoVienRepository;
         private readonly INguoiDungRepository _nguoiDungRepository;
+        private readonly ILogger<GiaoVienService> _logger;
 
         public GiaoVienService(
             IGiaoVienRepository giaoVienRepository,
-            INguoiDungRepository nguoiDungRepository)
+            INguoiDungRepository nguoiDungRepository,
+            ILogger<GiaoVienService> logger)
         {
             _giaoVienRepository = giaoVienRepository;
             _nguoiDungRepository = nguoiDungRepository;
+            _logger = logger;
         }
         // Lấy tất cả giáo viên
         public async Task<IEnumerable<GiaoVienResponse>> GetAllAsync()
@@ -46,7 +50,7 @@ namespace BLL.Services
                 MatKhauHash = x.MaNguoiDungNavigation?.MatKhauHash,
                 MaVaiTro = x.MaNguoiDungNavigation?.MaVaiTro,
                 AvatarUrl = x.MaNguoiDungNavigation?.AvatarUrl,
-                NgayTao = x.MaNguoiDungNavigation?.NgayTao
+
             });
         }
         // lấy giáo viên theo id
@@ -61,23 +65,31 @@ namespace BLL.Services
             {
                 MaGiaoVien = x.MaGiaoVien,
                 MaNguoiDung = x.MaNguoiDung,
-                HoTen = x.HoTen,
+
+                HoTen = x.MaNguoiDungNavigation?.HoTen,
+
                 GioiTinh = x.GioiTinh,
                 NgaySinh = x.NgaySinh,
-                SoDienThoai = x.SoDienThoai,
-                Email = x.Email,
+
+                SoDienThoai = x.MaNguoiDungNavigation?.SoDienThoai,
+                Email = x.MaNguoiDungNavigation?.Email,
+
                 ChuyenMon = x.ChuyenMon,
                 NgayVaoLam = x.NgayVaoLam,
                 LuongTheoGio = x.LuongTheoGio,
                 DangHoatDong = x.DangHoatDong,
 
-                TenDangNhap = x.MaNguoiDungNavigation?.TenDangNhap
+                TenDangNhap = x.MaNguoiDungNavigation?.TenDangNhap,
+                AvatarUrl = x.MaNguoiDungNavigation?.AvatarUrl,
+                NgayTao = x.MaNguoiDungNavigation.NgayTao,
+                MatKhauHash = x.MaNguoiDungNavigation.MatKhauHash,
+                MaVaiTro = x.MaNguoiDungNavigation.MaVaiTro
             };
         }
         // tạo giáo viên mới
         public async Task CreateAsync(CreateTeacherRequest requestAll)
         {
-          
+
             // kiểm tra email có tồn tại không
             ValidationHelper.CheckEmail(requestAll.Email);
             bool emailTonTai = await _nguoiDungRepository.ExistsByEmailAsync(requestAll.Email);
@@ -88,12 +100,12 @@ namespace BLL.Services
             // kiểm tra số điện thoại có tồn tại không
             ValidationHelper.CheckPhone(requestAll.SoDienThoai);
             bool soDienThoaiTonTai = await _nguoiDungRepository.ExistsBySoDienThoaiAsync(requestAll.SoDienThoai);
-            if(soDienThoaiTonTai)
+            if (soDienThoaiTonTai)
             {
-                throw new Exception("Số điện thoại đã tồn tại trong hệ thống.");
+                throw new Exception("Số điện thoại đã tồn tại trong hệ thống." + requestAll.SoDienThoai);
             }
             // kiểm tra tên đăng nhập có tồn tại không
-            if(requestAll.TenDangNhap != null)
+            if (requestAll.TenDangNhap != null)
             {
                 bool tenDangNhapTonTai = await _nguoiDungRepository.ExistsByUserNameAsync(requestAll.TenDangNhap);
                 if (tenDangNhapTonTai)
@@ -138,17 +150,28 @@ namespace BLL.Services
         // cập nhật giáo viên
         public async Task UpdateAsync(int id, UpdateTeacherRequest request)
         {
+            _logger.LogInformation("Bắt đầu cập nhật giáo viên có mã {TeacherId}.", id);
+
             // Lấy giáo viên
             var giaoVien = await _giaoVienRepository.GetByIdAsync(id);
 
             if (giaoVien == null)
+            {
+                _logger.LogWarning("Không thể cập nhật: không tìm thấy giáo viên có mã {TeacherId}.", id);
                 throw new Exception("Không tìm thấy giáo viên.");
+            }
 
             // Lấy người dùng
             var nguoiDung = await _nguoiDungRepository.GetByIdAsync(giaoVien.MaNguoiDung);
 
             if (nguoiDung == null)
+            {
+                _logger.LogWarning(
+                    "Không thể cập nhật giáo viên {TeacherId}: không tìm thấy người dùng {UserId}.",
+                    id,
+                    giaoVien.MaNguoiDung);
                 throw new Exception("Không tìm thấy người dùng.");
+            }
 
             // ==========================
             // Kiểm tra dữ liệu
@@ -211,10 +234,19 @@ namespace BLL.Services
             giaoVien.DangHoatDong = request.DangHoatDong;
 
             // Lưu
-            await _nguoiDungRepository.UpdateAsync(nguoiDung);
-            await _giaoVienRepository.UpdateAsync(giaoVien);
+            try
+            {
+                await _nguoiDungRepository.UpdateAsync(nguoiDung);
+                await _giaoVienRepository.UpdateAsync(giaoVien);
+                await _nguoiDungRepository.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi lưu cập nhật giáo viên có mã {TeacherId}.", id);
+                throw;
+            }
 
-            await _nguoiDungRepository.SaveChangesAsync();
+            _logger.LogInformation("Cập nhật giáo viên có mã {TeacherId} thành công.", id);
         }
         // xóa giáo viên
         public async Task DeleteAsync(int id)
@@ -310,7 +342,7 @@ namespace BLL.Services
             });
         }
         // lấy danh sách giáo viên theo phân trang
-        public async Task<PagedResult<GiaoVienResponse>> GetPagedAsync( int pageNumber, int pageSize)
+        public async Task<PagedResult<GiaoVienResponse>> GetPagedAsync(int pageNumber, int pageSize)
         {
             var result = await _giaoVienRepository.GetPagedAsync(pageNumber, pageSize);
 

@@ -21,6 +21,7 @@ public class BaoCaoRepository : IBaoCaoRepository
         var query = _context.DiemThis
             .AsNoTracking()
             .Include(x => x.MaHocVienNavigation)
+                .ThenInclude(x => x.MaNguoiDungNavigation)
             .Include(x => x.MaKyThiNavigation)
                 .ThenInclude(x => x.MaLopNavigation)
             .AsQueryable();
@@ -33,7 +34,7 @@ public class BaoCaoRepository : IBaoCaoRepository
 
         return await query
             .OrderBy(x => x.MaKyThiNavigation.MaLop)
-            .ThenBy(x => x.MaHocVienNavigation.HoTen)
+            .ThenBy(x => x.MaHocVienNavigation.MaNguoiDungNavigation.HoTen)
             .ThenByDescending(x => x.MaKyThiNavigation.NgayThi)
             .Select(x => new BaoCaoDiemResponse
             {
@@ -41,7 +42,7 @@ public class BaoCaoRepository : IBaoCaoRepository
                 MaLopCode = x.MaKyThiNavigation.MaLopNavigation.MaLopCode,
                 TenLop = x.MaKyThiNavigation.MaLopNavigation.TenLop,
                 MaHocVien = x.MaHocVien,
-                HoTenHocVien = x.MaHocVienNavigation.HoTen,
+                HoTenHocVien = x.MaHocVienNavigation.MaNguoiDungNavigation.HoTen,
                 MaKyThi = x.MaKyThi,
                 TenKyThi = x.MaKyThiNavigation.TenKyThi,
                 NgayThi = x.MaKyThiNavigation.NgayThi,

@@ -12,6 +12,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Lấy chuỗi kết nối và thông tin JWT
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("ConnectionStrings:DefaultConnection is not configured.");
 var jwtKey = builder.Configuration["Jwt:Key"]
@@ -24,24 +25,21 @@ var jwtAudience = builder.Configuration["Jwt:Audience"]
 // Add services
 builder.Services.AddControllers();
 
+// CẤU HÌNH CORS CHUẨN
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Frontend", policy =>
     {
-        var origins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
-
-        if (origins is { Length: > 0 })
-        {
-            policy.WithOrigins(origins)
-                .AllowAnyHeader()
-                .AllowAnyMethod();
-        }
-        else
-        {
-            policy.AllowAnyOrigin()
-                .AllowAnyHeader()
-                .AllowAnyMethod();
-        }
+        policy.WithOrigins(
+                "http://localhost:8081",
+                "http://localhost:19006",
+                "http://10.40.1.187:8081",
+                "http://10.40.1.187:5259",
+                "http://localhost:3000"
+              )
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
@@ -50,11 +48,10 @@ builder.Services.AddSwaggerGen();
 
 // Database
 builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(
-        connectionString);
-});
-
+    options.UseSqlServer(connectionString)
+           .EnableDetailedErrors()
+           .EnableSensitiveDataLogging()   // hiện cả giá trị dữ liệu
+           .LogTo(Console.WriteLine, LogLevel.Information));
 // JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -77,7 +74,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 // Authorization
 builder.Services.AddAuthorization();
 
-// Dependency Injection
+// Dependency Injection - Repositories & Services
 builder.Services.AddScoped<IVaiTroRepository, VaiTroRepository>();
 builder.Services.AddScoped<IVaiTroService, VaiTroService>();
 
@@ -87,52 +84,51 @@ builder.Services.AddScoped<INguoiDungService, NguoiDungService>();
 builder.Services.AddScoped<IGiaoVienRepository, GiaoVienRepository>();
 builder.Services.AddScoped<IGiaoVienService, GiaoVienService>();
 
-// HocVien
 builder.Services.AddScoped<IHocVienRepository, HocVienRepository>();
 builder.Services.AddScoped<IHocVienService, HocVienService>();
-// KhoaHoc
+
 builder.Services.AddScoped<IKhoaHocRepository, KhoaHocRepository>();
 builder.Services.AddScoped<IKhoaHocService, KhoaHocService>();
-// phong hoc
+
 builder.Services.AddScoped<IPhongHocRepository, PhongHocRepository>();
 builder.Services.AddScoped<IPhongHocService, PhongHocService>();
-// lop hoc
+
 builder.Services.AddScoped<ILopHocRepository, LopHocRepository>();
 builder.Services.AddScoped<ILopHocService, LopHocService>();
-// buoi hoc
+
 builder.Services.AddScoped<IBuoiHocRepository, BuoiHocRepository>();
 builder.Services.AddScoped<IBuoiHocService, BuoiHocService>();
-// Đăng ký học
+
 builder.Services.AddScoped<IDangKyHocRepository, DangKyHocRepository>();
 builder.Services.AddScoped<IDangKyHocService, DangKyHocService>();
-// LichHoc
+
 builder.Services.AddScoped<ILichHocRepository, LichHocRepository>();
 builder.Services.AddScoped<ILichHocService, LichHocService>();
-// HoaDon
+
 builder.Services.AddScoped<IHoaDonRepository, HoaDonRepository>();
 builder.Services.AddScoped<IHoaDonService, HoaDonService>();
-// Chi tiết hóa đơn
+
 builder.Services.AddScoped<IChiTietHoaDonRepository, ChiTietHoaDonRepository>();
 builder.Services.AddScoped<IChiTietHoaDonService, ChiTietHoaDonService>();
-// Tin nhắn
+
 builder.Services.AddScoped<ITinNhanRepository, TinNhanRepository>();
 builder.Services.AddScoped<ITinNhanService, TinNhanService>();
-// Thông báo
+
 builder.Services.AddScoped<IThongBaoRepository, ThongBaoRepository>();
 builder.Services.AddScoped<IThongBaoService, ThongBaoService>();
-// Báo cáo
+
 builder.Services.AddScoped<IBaoCaoRepository, BaoCaoRepository>();
 builder.Services.AddScoped<IBaoCaoService, BaoCaoService>();
-// thanh toán
+
 builder.Services.AddScoped<IThanhToanRepository, ThanhToanRepository>();
 builder.Services.AddScoped<IThanhToanService, ThanhToanService>();
-// KyThi
+
 builder.Services.AddScoped<IKyThiRepository, KyThiRepository>();
 builder.Services.AddScoped<IKyThiService, KyThiService>();
-// Diem danh 
+
 builder.Services.AddScoped<IDiemDanhRepository, DiemDanhRepository>();
 builder.Services.AddScoped<IDiemDanhService, DiemDanhService>();
-// điểm thi
+
 builder.Services.AddScoped<IDiemThiRepository, DiemThiRepository>();
 builder.Services.AddScoped<IDiemThiService, DiemThiService>();
 
@@ -148,9 +144,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
+// 1. BẬT CORS TRƯỚC HẾT TẤT CẢ CÁC MIDDLEWARE
 app.UseCors("Frontend");
+
+// 2. KHÔNG DÙNG HTTPS REDIRECTION KHI DEV VỚI EXPO WEB / MOBILE
+// app.UseHttpsRedirection();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -1,6 +1,48 @@
 @WebAPI_HostAddress = http://localhost:5259
+@token = REPLACE_WITH_JWT_TOKEN
 
 GET {{WebAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### Danh sách phòng học
+GET {{WebAPI_HostAddress}}/api/PhongHoc
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Tìm kiếm theo tên, vị trí hoặc sức chứa
+GET {{WebAPI_HostAddress}}/api/PhongHoc/search?keyword=101
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Chi tiết phòng học (thay 1 bằng mã phòng)
+GET {{WebAPI_HostAddress}}/api/PhongHoc/1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Thêm phòng học
+POST {{WebAPI_HostAddress}}/api/PhongHoc
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "tenPhong": "Phong 101",
+  "sucChua": 20,
+  "viTri": "Tang 1"
+}
+
+### Cập nhật phòng học (thay 1 bằng mã phòng)
+PUT {{WebAPI_HostAddress}}/api/PhongHoc/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "tenPhong": "Phong 101",
+  "sucChua": 24,
+  "viTri": "Tang 1"
+}
+
+### Xóa phòng học (thay 1 bằng mã phòng; phòng đang được lớp sử dụng sẽ không xóa được)
+DELETE {{WebAPI_HostAddress}}/api/PhongHoc/1
+Authorization: Bearer {{token}}

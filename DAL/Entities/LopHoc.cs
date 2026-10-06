@@ -46,6 +46,9 @@ public partial class LopHoc
     [Column("si_so_toi_da")]
     public int? SiSoToiDa { get; set; }
 
+    [Column("si_so_hien_tai")]
+    public int SiSoHienTai { get; set; }
+
     [Column("trang_thai")]
     [StringLength(20)]
     public string? TrangThai { get; set; }

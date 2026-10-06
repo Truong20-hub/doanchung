@@ -60,22 +60,18 @@ namespace DAL.Repositories
         public async Task<HocVien?> UpdateAsync(int id, HocVien hocVien)
         {
             var existingHocVien = await _context.HocViens
+                .Include(x => x.MaNguoiDungNavigation)
                 .FirstOrDefaultAsync(x => x.MaHocVien == id);
 
             if (existingHocVien == null)
                 return null;
 
-            existingHocVien.MaNguoiDung = hocVien.MaNguoiDung;
-            existingHocVien.HoTen = hocVien.HoTen;
             existingHocVien.GioiTinh = hocVien.GioiTinh;
             existingHocVien.NgaySinh = hocVien.NgaySinh;
-            existingHocVien.SoDienThoai = hocVien.SoDienThoai;
-            existingHocVien.Email = hocVien.Email;
             existingHocVien.DiaChi = hocVien.DiaChi;
             existingHocVien.TenPhuHuynh = hocVien.TenPhuHuynh;
             existingHocVien.SdtPhuHuynh = hocVien.SdtPhuHuynh;
             existingHocVien.NgayNhapHoc = hocVien.NgayNhapHoc;
-            existingHocVien.DangHoatDong = hocVien.DangHoatDong;
 
             return existingHocVien;
         }
@@ -194,11 +190,19 @@ namespace DAL.Repositories
         public async Task<IEnumerable<HocVien>> GetByNameAsync(
             string name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return new List<HocVien>();
+            }
+
+            name = name.Trim();
+
             return await _context.HocViens
-                .Include(x => x.MaNguoiDungNavigation)
-                .Where(x =>
-                    x.HoTen != null &&
-                    x.HoTen.Contains(name))
+                .Include(hv => hv.MaNguoiDungNavigation)
+                .Where(hv =>
+                    hv.MaNguoiDungNavigation != null &&
+                    hv.MaNguoiDungNavigation.HoTen != null &&
+                    hv.MaNguoiDungNavigation.HoTen.Contains(name))
                 .ToListAsync();
         }
 
@@ -230,11 +234,19 @@ namespace DAL.Repositories
         public async Task<IEnumerable<HocVien>> GetByPhoneAsync(
             string phone)
         {
+            if (string.IsNullOrWhiteSpace(phone))
+            {
+                return new List<HocVien>();
+            }
+
+            phone = phone.Trim();
+
             return await _context.HocViens
-                .Include(x => x.MaNguoiDungNavigation)
-                .Where(x =>
-                    x.SoDienThoai != null &&
-                    x.SoDienThoai.Contains(phone))
+                .Include(hv => hv.MaNguoiDungNavigation)
+                .Where(hv =>
+                    hv.MaNguoiDungNavigation != null &&
+                    hv.MaNguoiDungNavigation.SoDienThoai != null &&
+                    hv.MaNguoiDungNavigation.SoDienThoai.Contains(phone))
                 .ToListAsync();
         }
 
@@ -243,45 +255,66 @@ namespace DAL.Repositories
             string email)
         {
             return await _context.HocViens
-                .Include(x => x.MaNguoiDungNavigation)
-                .Where(x =>
-                    x.Email != null &&
-                    x.Email.Contains(email))
-                .ToListAsync();
+       .Include(h => h.MaNguoiDungNavigation)
+       .Where(h =>
+           h.MaNguoiDungNavigation != null &&
+           h.MaNguoiDungNavigation.Email != null &&
+           h.MaNguoiDungNavigation.Email.Contains(email))
+       .ToListAsync();
         }
 
         // =========================================================
         // TÌM KIẾM NHIỀU TIÊU CHÍ
         // =========================================================
 
-        public async Task<IEnumerable<HocVien>> SearchAsync(
-            string keyword)
+        public async Task<IEnumerable<HocVien>> SearchAsync(string keyword)
         {
             return await _context.HocViens
                 .Include(x => x.MaNguoiDungNavigation)
                 .Where(x =>
-                    (x.HoTen != null &&
-                     x.HoTen.Contains(keyword))
+                    (
+                        x.MaNguoiDungNavigation != null
+                        &&
+                        (
+                            (
+                                x.MaNguoiDungNavigation.HoTen != null
+                                &&
+                                x.MaNguoiDungNavigation.HoTen.Contains(keyword)
+                            )
+
+                            ||
+
+                            (
+                                x.MaNguoiDungNavigation.Email != null
+                                &&
+                                x.MaNguoiDungNavigation.Email.Contains(keyword)
+                            )
+
+                            ||
+
+                            (
+                                x.MaNguoiDungNavigation.SoDienThoai != null
+                                &&
+                                x.MaNguoiDungNavigation.SoDienThoai.Contains(keyword)
+                            )
+                        )
+                    )
 
                     ||
 
-                    (x.Email != null &&
-                     x.Email.Contains(keyword))
+                    (
+                        x.DiaChi != null
+                        &&
+                        x.DiaChi.Contains(keyword)
+                    )
 
                     ||
 
-                    (x.SoDienThoai != null &&
-                     x.SoDienThoai.Contains(keyword))
-
-                    ||
-
-                    (x.DiaChi != null &&
-                     x.DiaChi.Contains(keyword))
-
-                    ||
-
-                    (x.TenPhuHuynh != null &&
-                     x.TenPhuHuynh.Contains(keyword))
+                    (
+                        x.TenPhuHuynh != null
+                        &&
+                        x.TenPhuHuynh.Contains(keyword)
+                    )
                 )
                 .ToListAsync();
         }
@@ -314,29 +347,6 @@ namespace DAL.Repositories
         // TÌM KIẾM + PHÂN TRANG
         // =========================================================
 
-        // Theo mã người dùng + phân trang
-        public async Task<(IEnumerable<HocVien> Data, int TotalCount)>
-            GetByNguoiDungIdPagedAsync(
-                int maNguoiDung,
-                int pageNumber,
-                int pageSize)
-        {
-            var query = _context.HocViens
-                .Include(x => x.MaNguoiDungNavigation)
-                .Where(x => x.MaNguoiDung == maNguoiDung)
-                .AsQueryable();
-
-            var totalCount = await query.CountAsync();
-
-            var data = await query
-                .OrderBy(x => x.MaHocVien)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
-
-            return (data, totalCount);
-        }
-
         // Theo tên học viên + phân trang
         public async Task<(IEnumerable<HocVien> Data, int TotalCount)>
             GetByNamePagedAsync(
@@ -347,8 +357,9 @@ namespace DAL.Repositories
             var query = _context.HocViens
                 .Include(x => x.MaNguoiDungNavigation)
                 .Where(x =>
-                    x.HoTen != null &&
-                    x.HoTen.Contains(name))
+                    x.MaNguoiDungNavigation != null &&
+                    x.MaNguoiDungNavigation.HoTen != null &&
+                    x.MaNguoiDungNavigation.HoTen.Contains(name))
                 .AsQueryable();
 
             var totalCount = await query.CountAsync();
@@ -422,8 +433,9 @@ namespace DAL.Repositories
             var query = _context.HocViens
                 .Include(x => x.MaNguoiDungNavigation)
                 .Where(x =>
-                    x.SoDienThoai != null &&
-                    x.SoDienThoai.Contains(phone))
+                    x.MaNguoiDungNavigation != null &&
+                    x.MaNguoiDungNavigation.SoDienThoai != null &&
+                    x.MaNguoiDungNavigation.SoDienThoai.Contains(phone))
                 .AsQueryable();
 
             var totalCount = await query.CountAsync();
@@ -447,8 +459,9 @@ namespace DAL.Repositories
             var query = _context.HocViens
                 .Include(x => x.MaNguoiDungNavigation)
                 .Where(x =>
-                    x.Email != null &&
-                    x.Email.Contains(email))
+                    x.MaNguoiDungNavigation != null &&
+                    x.MaNguoiDungNavigation.Email != null &&
+                    x.MaNguoiDungNavigation.Email.Contains(email))
                 .AsQueryable();
 
             var totalCount = await query.CountAsync();
@@ -472,28 +485,18 @@ namespace DAL.Repositories
             var query = _context.HocViens
                 .Include(x => x.MaNguoiDungNavigation)
                 .Where(x =>
-                    (x.HoTen != null &&
-                     x.HoTen.Contains(keyword))
-
+                    (
+                        x.MaNguoiDungNavigation != null &&
+                        (
+                            (x.MaNguoiDungNavigation.HoTen != null && x.MaNguoiDungNavigation.HoTen.Contains(keyword)) ||
+                            (x.MaNguoiDungNavigation.Email != null && x.MaNguoiDungNavigation.Email.Contains(keyword)) ||
+                            (x.MaNguoiDungNavigation.SoDienThoai != null && x.MaNguoiDungNavigation.SoDienThoai.Contains(keyword))
+                        )
+                    )
                     ||
-
-                    (x.Email != null &&
-                     x.Email.Contains(keyword))
-
+                    (x.DiaChi != null && x.DiaChi.Contains(keyword))
                     ||
-
-                    (x.SoDienThoai != null &&
-                     x.SoDienThoai.Contains(keyword))
-
-                    ||
-
-                    (x.DiaChi != null &&
-                     x.DiaChi.Contains(keyword))
-
-                    ||
-
-                    (x.TenPhuHuynh != null &&
-                     x.TenPhuHuynh.Contains(keyword))
+                    (x.TenPhuHuynh != null && x.TenPhuHuynh.Contains(keyword))
                 )
                 .AsQueryable();
 
@@ -506,6 +509,40 @@ namespace DAL.Repositories
                 .ToListAsync();
 
             return (data, totalCount);
+        }
+        // kiểm tra học viên là khóa ngoại của bảng nào ko
+        public async Task<bool> IsForeignKeyAsync(int maHocVien)
+        {
+            // Kiểm tra trong bảng HoaDon
+            bool existsInHoaDon = await _context.HoaDons
+                .AnyAsync(x => x.MaHocVien == maHocVien);
+
+            if (existsInHoaDon)
+                return true;
+
+            // Kiểm tra trong bảng DiemDanh
+            bool existsInDiemDanh = await _context.DiemDanhs
+                .AnyAsync(x => x.MaHocVien == maHocVien);
+
+            if (existsInDiemDanh)
+                return true;
+
+            // Kiểm tra trong bảng DiemThi
+            bool existsInDiemThi = await _context.DiemThis
+                .AnyAsync(x => x.MaHocVien == maHocVien);
+
+            if (existsInDiemThi)
+                return true;
+
+            // Kiểm tra trong bảng DangKyHoc
+            bool existsInDangKyHoc = await _context.DangKyHocs
+                .AnyAsync(x => x.MaHocVien == maHocVien);
+
+            if (existsInDangKyHoc)
+                return true;
+
+            // Nếu không tồn tại trong bất kỳ bảng nào, trả về false
+            return false;
         }
 
         // =========================================================

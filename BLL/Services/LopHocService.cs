@@ -59,6 +59,8 @@ namespace BLL.Services
 
                 SiSoToiDa = lopHoc.SiSoToiDa,
 
+                SiSoHienTai = lopHoc.SiSoHienTai,
+
                 TrangThai = lopHoc.TrangThai
             };
         }

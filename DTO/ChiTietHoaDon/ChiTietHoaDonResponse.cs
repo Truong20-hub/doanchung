@@ -8,6 +8,10 @@ namespace DTO.ChiTietHoaDon
         // Mã hóa đơn chứa dòng chi tiết này.
         public int MaHoaDon { get; set; }
 
+        public string LoaiKhoan { get; set; } = null!;
+
+        public string MoTa { get; set; } = null!;
+
         // Số lượng của mục trong hóa đơn.
         public int SoLuong { get; set; }
 

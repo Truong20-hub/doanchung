@@ -154,12 +154,25 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetByNguoiDungId(
             int maNguoiDung)
         {
-            var result =
-                await _hocVienService
-                    .GetByNguoiDungIdAsync(maNguoiDung);
+            try
+            {
+                var result =
+                    await _hocVienService
+                        .GetByNguoiDungIdAsync(maNguoiDung);
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    message = ex.Message
+                });
+            }
         }
+
+
+
 
         // =========================================================
         // GET: api/HocVien/ten?name=Nguyen
@@ -270,28 +283,6 @@ namespace WebAPI.Controllers
             var result =
                 await _hocVienService
                     .GetPagedAsync(
-                        pageNumber,
-                        pageSize);
-
-            return Ok(result);
-        }
-
-        // =========================================================
-        // GET: api/HocVien/paging/nguoi-dung/5?pageNumber=1&pageSize=10
-        // Mã người dùng + phân trang
-        // =========================================================
-
-        [HttpGet("paging/nguoi-dung/{maNguoiDung}")]
-        public async Task<IActionResult>
-            GetByNguoiDungIdPaged(
-                int maNguoiDung,
-                [FromQuery] int pageNumber = 1,
-                [FromQuery] int pageSize = 10)
-        {
-            var result =
-                await _hocVienService
-                    .GetByNguoiDungIdPagedAsync(
-                        maNguoiDung,
                         pageNumber,
                         pageSize);
 

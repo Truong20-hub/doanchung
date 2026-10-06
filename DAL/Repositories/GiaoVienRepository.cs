@@ -23,9 +23,10 @@ namespace DAL.Repositories
 
         public async Task<GiaoVien?> GetByIdAsync(int id)
         {
-            return await _context.GiaoViens
-                .Include(x => x.MaNguoiDungNavigation)
-                .FirstOrDefaultAsync(x => x.MaGiaoVien == id);
+            GiaoVien? result = await _context.GiaoViens
+    .Include(gv => gv.MaNguoiDungNavigation)
+    .FirstOrDefaultAsync(gv => gv.MaGiaoVien == id);
+            return result;
         }
 
         public async Task AddAsync(GiaoVien giaoVien)

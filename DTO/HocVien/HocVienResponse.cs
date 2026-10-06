@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace DTO.HocVien
 {
- 
+
 
     public class HocVienResponse
     {
         public int MaHocVien { get; set; }
 
-        public int? MaNguoiDung { get; set; }
+        public int MaNguoiDung { get; set; }
 
+        // Thông tin tài khoản người dùng
         public string HoTen { get; set; } = string.Empty;
 
-        public string? GioiTinh { get; set; }
-
-        public DateOnly? NgaySinh { get; set; }
+        public string? Email { get; set; }
 
         public string? SoDienThoai { get; set; }
 
-        public string? Email { get; set; }
+        public bool DangHoatDong { get; set; }
+
+        // Thông tin học viên
+        public string? GioiTinh { get; set; }
+
+        public DateOnly? NgaySinh { get; set; }
 
         public string? DiaChi { get; set; }
 
@@ -31,12 +35,7 @@ namespace DTO.HocVien
         public string? SdtPhuHuynh { get; set; }
 
         public DateOnly? NgayNhapHoc { get; set; }
-
-        public bool? DangHoatDong { get; set; }
-
-        // Thông tin tài khoản
-        public string? TenDangNhap { get; set; }
-
+        public string TenDangNhap { get; set; } = string.Empty;
         public string? AvatarUrl { get; set; }
     }
 }

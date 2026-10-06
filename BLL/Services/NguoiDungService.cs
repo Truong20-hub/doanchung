@@ -3,6 +3,7 @@ using DAL.Entities;
 using DAL.Interfaces;
 using DTO.Auth;
 using DTO.NguoiDung;
+using DTO.result;
 
 namespace BLL.Services
 {
@@ -55,8 +56,35 @@ namespace BLL.Services
                 SoDienThoai = nd.SoDienThoai,
                 AvatarUrl = nd.AvatarUrl,
                 DangHoatDong = nd.DangHoatDong,
+                NgayTao = nd.NgayTao,
                 MaVaiTro = nd.MaVaiTro,
-                TenVaiTro = nd.MaVaiTroNavigation.TenVaiTro
+                TenVaiTro = nd.MaVaiTroNavigation.TenVaiTro,
+                MatKhauHash = nd.MatKhauHash
+
+            };
+        }
+        // lấy theo tên đăng nhập
+        public async Task<NguoiDungResponse?> GetByNamelogin(string NameLogin)
+        {
+            var nd = await _nguoiDungRepository.GetByUserNameAsync(NameLogin);
+            if(nd == null)
+            {
+                return null;
+            }
+            return new NguoiDungResponse
+            {
+                MaNguoiDung = nd.MaNguoiDung,
+                TenDangNhap = nd.TenDangNhap,
+                HoTen = nd.HoTen,
+                Email = nd.Email,
+                SoDienThoai = nd.SoDienThoai,
+                AvatarUrl = nd.AvatarUrl,
+                DangHoatDong = nd.DangHoatDong,
+                NgayTao = nd.NgayTao,
+                MaVaiTro = nd.MaVaiTro,
+                TenVaiTro = nd.MaVaiTroNavigation.TenVaiTro,
+                MatKhauHash = nd.MatKhauHash
+
             };
         }
 
@@ -106,10 +134,11 @@ namespace BLL.Services
         }
 
         // Xóa
-        public async Task DeleteAsync(int id)
+        public async Task<result> DeleteAsync(int id)
         {
-            await _nguoiDungRepository.DeleteAsync(id);
+            result r = await _nguoiDungRepository.DeleteAsync(id);
             await _nguoiDungRepository.SaveChangesAsync();
+            return r;
         }
         public async Task<LoginResponse> LoginAsync(LoginResquest request)
         {
@@ -127,6 +156,12 @@ namespace BLL.Services
             return new LoginResponse
             {
                 MaNguoiDung = user.MaNguoiDung,
+                MaHocVien = user.HocVien?.MaHocVien,
+                MaGiaoVien = user.GiaoVien?.MaGiaoVien,
+                // Phụ huynh được lưu trực tiếp trong nguoi_dung, chưa có bảng riêng.
+                MaPhuHuynh = user.MaVaiTroNavigation.TenVaiTro == "PhuHuynh"
+                    ? user.MaNguoiDung
+                    : null,
                 HoTen = user.HoTen,
                 TenDangNhap = user.TenDangNhap,
                 VaiTro = user.MaVaiTroNavigation.TenVaiTro,

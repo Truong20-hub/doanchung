@@ -26,6 +26,7 @@ namespace DAL.Repositories
             return _context.LopHocs
                 .Include(x => x.MaKhoaHocNavigation)
                 .Include(x => x.MaGiaoVienNavigation)
+                    .ThenInclude(x => x!.MaNguoiDungNavigation)
                 .Include(x => x.MaPhongNavigation)
                 .AsQueryable();
         }

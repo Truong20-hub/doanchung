@@ -79,7 +79,9 @@ namespace DAL.Repositories
                 keyword = keyword.Trim();
 
                 query = query.Where(x =>
-                    (x.GhiChu != null && x.GhiChu.Contains(keyword))
+                    x.LoaiKhoan.Contains(keyword)
+                    || x.MoTa.Contains(keyword)
+                    || (x.GhiChu != null && x.GhiChu.Contains(keyword))
                     || x.MaHoaDonNavigation.TrangThai != null &&
                        x.MaHoaDonNavigation.TrangThai.Contains(keyword)
                     || x.MaHoaDonNavigation.MaHocVienNavigation.HoTen.Contains(keyword)
@@ -131,7 +133,9 @@ namespace DAL.Repositories
             {
                 keyword = keyword.Trim();
                 query = query.Where(x =>
-                    (x.GhiChu != null && x.GhiChu.Contains(keyword))
+                    x.LoaiKhoan.Contains(keyword)
+                    || x.MoTa.Contains(keyword)
+                    || (x.GhiChu != null && x.GhiChu.Contains(keyword))
                     || (x.MaHoaDonNavigation.TrangThai != null &&
                         x.MaHoaDonNavigation.TrangThai.Contains(keyword))
                     || x.MaHoaDonNavigation.MaHocVienNavigation.HoTen.Contains(keyword)
@@ -191,9 +195,10 @@ namespace DAL.Repositories
                 return null;
 
             existing.MaHoaDon = chiTietHoaDon.MaHoaDon;
+            existing.LoaiKhoan = chiTietHoaDon.LoaiKhoan;
+            existing.MoTa = chiTietHoaDon.MoTa;
             existing.SoLuong = chiTietHoaDon.SoLuong;
             existing.DonGia = chiTietHoaDon.DonGia;
-            existing.ThanhTien = chiTietHoaDon.ThanhTien;
             existing.GhiChu = chiTietHoaDon.GhiChu;
 
             await _context.SaveChangesAsync();

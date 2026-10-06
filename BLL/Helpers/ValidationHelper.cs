@@ -7,7 +7,7 @@ namespace BLL.Helpers
         /// <summary>
         /// Kiểm tra chuỗi rỗng
         /// </summary>
-        public static void CheckRequired(string value, string fieldName)
+        public static void CheckRequired(string? value, string fieldName)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -18,13 +18,13 @@ namespace BLL.Helpers
         /// <summary>
         /// Kiểm tra Email
         /// </summary>
-        public static void CheckEmail(string email)
+        public static void CheckEmail(string? email)
         {
             CheckRequired(email, "Email");
 
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
-            if (!Regex.IsMatch(email, pattern))
+            if (!Regex.IsMatch(email!, pattern))
             {
                 throw new ArgumentException("Email không đúng định dạng.");
             }
@@ -33,15 +33,31 @@ namespace BLL.Helpers
         /// <summary>
         /// Kiểm tra số điện thoại
         /// </summary>
-        public static void CheckPhone(string phone)
+        public static void CheckPhone(string? phone)
         {
             CheckRequired(phone, "Số điện thoại");
 
-            string pattern = @"^(0|\+84)[0-9]{9}$";
+            if (phone!.Length < 9 || phone.Length > 13)
+            {
+                throw new ArgumentException("Số điện thoại phải có độ dài từ 9 đến 13 ký tự.");
+            }
+
+            string pattern = @"^\+?[0-9]{9,12}$";
 
             if (!Regex.IsMatch(phone, pattern))
             {
                 throw new ArgumentException("Số điện thoại không hợp lệ.");
+            }
+        }
+
+        /// <summary>
+        /// Kiểm tra năm sinh không vượt quá năm hiện tại.
+        /// </summary>
+        public static void CheckBirthDate(DateOnly? birthDate)
+        {
+            if (birthDate.HasValue && birthDate.Value.Year > DateTime.Now.Year)
+            {
+                throw new ArgumentException("Năm sinh không được lớn hơn năm hiện tại.");
             }
         }
 

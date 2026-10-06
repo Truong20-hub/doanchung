@@ -55,29 +55,35 @@ namespace BLL.Services
         // VALIDATE LOẠI KỲ THI
         // =====================================================
 
-        private static void ValidateLoaiKyThi(
+        private static string? NormalizeLoaiKyThi(
             string? loaiKyThi)
         {
             if (string.IsNullOrWhiteSpace(loaiKyThi))
-                return;
+                return null;
 
-            var validTypes = new[]
+            var normalizedType = loaiKyThi.Trim();
+            var typeMap = new Dictionary<string, string>(
+                StringComparer.OrdinalIgnoreCase)
             {
-                "Giữa kỳ",
-                "Cuối kỳ",
-                "Kiểm tra",
-                "Thi thử"
+                ["QuizNgan"] = "QuizNgan",
+                ["Kiểm tra"] = "QuizNgan",
+                ["GiuaKy"] = "GiuaKy",
+                ["Giữa kỳ"] = "GiuaKy",
+                ["CuoiKy"] = "CuoiKy",
+                ["Cuối kỳ"] = "CuoiKy",
+                ["Mock"] = "Mock",
+                ["Thi thử"] = "Mock"
             };
 
-            if (!validTypes.Contains(
-                loaiKyThi.Trim(),
-                StringComparer.OrdinalIgnoreCase))
+            if (!typeMap.TryGetValue(normalizedType, out var databaseType))
             {
                 throw new ArgumentException(
                     "Loại kỳ thi không hợp lệ. " +
-                    "Chỉ chấp nhận: Giữa kỳ, Cuối kỳ, " +
-                    "Kiểm tra, Thi thử.");
+                    "Chỉ chấp nhận: Kiểm tra, Giữa kỳ, " +
+                    "Cuối kỳ, Thi thử.");
             }
+
+            return databaseType;
         }
 
         // =====================================================
@@ -156,11 +162,16 @@ namespace BLL.Services
             GetByLoaiKyThiAsync(
                 string loaiKyThi)
         {
-            ValidateLoaiKyThi(loaiKyThi);
+            var normalizedType = NormalizeLoaiKyThi(loaiKyThi);
+            if (normalizedType == null)
+            {
+                throw new ArgumentException(
+                    "Loại kỳ thi không được để trống.");
+            }
 
             var data =
                 await _repository
-                    .GetByLoaiKyThiAsync(loaiKyThi);
+                    .GetByLoaiKyThiAsync(normalizedType);
 
             return data.Select(MapToResponse);
         }
@@ -243,8 +254,8 @@ namespace BLL.Services
             }
 
             // Kiểm tra loại
-            ValidateLoaiKyThi(
-                request.LoaiKyThi);
+            var loaiKyThi = NormalizeLoaiKyThi(
+                request.LoaiKyThi) ?? "QuizNgan";
 
             // Kiểm tra điểm
             ValidateDiemToiDa(
@@ -275,10 +286,7 @@ namespace BLL.Services
                     request.NgayThi,
 
                 LoaiKyThi =
-                    string.IsNullOrWhiteSpace(
-                        request.LoaiKyThi)
-                        ? null
-                        : request.LoaiKyThi.Trim(),
+                    loaiKyThi,
 
                 DiemToiDa =
                     request.DiemToiDa
@@ -331,8 +339,8 @@ namespace BLL.Services
             }
 
             // Kiểm tra loại
-            ValidateLoaiKyThi(
-                request.LoaiKyThi);
+            var loaiKyThi = NormalizeLoaiKyThi(
+                request.LoaiKyThi) ?? "QuizNgan";
 
             // Kiểm tra điểm
             ValidateDiemToiDa(
@@ -363,10 +371,7 @@ namespace BLL.Services
                 request.NgayThi;
 
             existing.LoaiKyThi =
-                string.IsNullOrWhiteSpace(
-                    request.LoaiKyThi)
-                    ? null
-                    : request.LoaiKyThi.Trim();
+                loaiKyThi;
 
             existing.DiemToiDa =
                 request.DiemToiDa;

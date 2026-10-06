@@ -8,6 +8,12 @@ public class LoginResponse
 {
     public int MaNguoiDung { get; set; }
 
+    public int? MaHocVien { get; set; }
+
+    public int? MaGiaoVien { get; set; }
+
+    public int? MaPhuHuynh { get; set; }
+
     public string HoTen { get; set; } = string.Empty;
 
     public string TenDangNhap { get; set; } = string.Empty;

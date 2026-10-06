@@ -48,6 +48,8 @@ namespace DTO.LopHoc
 
         public int? SiSoToiDa { get; set; }
 
+        public int SiSoHienTai { get; set; }
+
         public string? TrangThai { get; set; }
     }
 }

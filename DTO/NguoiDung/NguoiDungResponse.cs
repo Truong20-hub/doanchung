@@ -3,6 +3,7 @@ namespace DTO.NguoiDung
     public class NguoiDungResponse
     {
         public int MaNguoiDung { get; set; }
+        public string MatKhauHash { get; set; }
 
         public string TenDangNhap { get; set; } = string.Empty;
 
@@ -12,7 +13,7 @@ namespace DTO.NguoiDung
 
         public string? SoDienThoai { get; set; }
 
-        public int MaVaiTro { get; set; }
+        public int? MaVaiTro { get; set; }
 
         public string TenVaiTro { get; set; } = string.Empty;
 

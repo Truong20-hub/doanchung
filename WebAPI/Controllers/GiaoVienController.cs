@@ -29,14 +29,23 @@ namespace WebAPI.Controllers
 
         // GET: api/GiaoVien/1
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById([FromQuery] int id)
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var result = await _giaoVienService.GetByIdAsync(id);
 
-            if (result == null)
-                return NotFound("Không tìm thấy giáo viên.");
+            try
+            {
+                var result = await _giaoVienService.GetByIdAsync(id);
 
-            return Ok(result);
+                if (result == null)
+                    return NotFound("Không tìm thấy giáo viên.");
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.InnerException?.Message ?? ex.Message);
+            }
+
         }
 
         // POST: api/GiaoVien
@@ -59,10 +68,10 @@ namespace WebAPI.Controllers
                 throw new Exception(ex.InnerException?.Message ?? ex.Message);
             }
         }
-            // PUT: api/GiaoVien/1
+        // PUT: api/GiaoVien/1
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(
-            [FromQuery] int id,
+            int id,
             UpdateTeacherRequest request)
         {
             await _giaoVienService.UpdateAsync(id, request);
@@ -72,7 +81,7 @@ namespace WebAPI.Controllers
 
         // DELETE: api/GiaoVien/1
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromQuery] int id)
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
@@ -83,7 +92,7 @@ namespace WebAPI.Controllers
             {
                 throw new Exception(ex.InnerException?.Message ?? ex.Message);
             }
-        
+
         }
         // Tìm giáo viên theo tên
         [HttpGet("ten")]
@@ -142,9 +151,9 @@ namespace WebAPI.Controllers
         // Tìm kiếm giáo viên theo tên và phân trang
         [HttpGet("ten-paged")]
         public async Task<IEnumerable<GiaoVienResponse>> GetByNamePagingAsync(
-    [FromQuery]string name,
-    [FromQuery]int pageNumber,
-    [FromQuery]int pageSize)
+    [FromQuery] string name,
+    [FromQuery] int pageNumber,
+    [FromQuery] int pageSize)
         {
             var ds = await _giaoVienService.GetAllAsync();
 

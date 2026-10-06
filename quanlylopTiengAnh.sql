@@ -748,3 +748,178 @@ UNION ALL SELECT 'thanh_toan', COUNT(*) FROM [dbo].[thanh_toan]
 UNION ALL SELECT 'thong_bao', COUNT(*) FROM [dbo].[thong_bao]
 UNION ALL SELECT 'tin_nhan', COUNT(*) FROM [dbo].[tin_nhan];
 GO
+\xef\xbb\xbf/* =====================================================================================
+   MIGRATION: Them bang [chi_tiet_hoa_don] vao CSDL QuanLyLopTiengAnh DA TON TAI
+
+   - CHI THEM bang moi, KHONG sua/xoa/doi ten bat ky bang hay cot nao dang co.
+   - KHONG chay lai file quanlylopTiengAnh.sql (file do co DROP TABLE, se MAT du lieu).
+   - Chay duoc nhieu lan (idempotent): bang da co thi bo qua, hoa don da co chi tiet thi
+     khong chen them.
+   - Du lieu cu: moi hoa don hien co duoc tao san 1 dong chi tiet "Hoc phi lop ..."
+     = dung [tong_tien] cua hoa don, nen tong cac dong chi tiet khop voi hoa don cu.
+   ===================================================================================== */
+
+USE [QuanLyLopTiengAnh];
+GO
+
+SET XACT_ABORT ON;
+BEGIN TRANSACTION;
+
+/* -------------------------------------------------------------------------------------
+   1. TAO BANG chi_tiet_hoa_don (neu chua co)
+   ------------------------------------------------------------------------------------- */
+IF OBJECT_ID(N'dbo.chi_tiet_hoa_don', N'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[chi_tiet_hoa_don]
+    (
+        [ma_chi_tiet]  INT IDENTITY(1,1) NOT NULL,
+        [ma_hoa_don]   INT NOT NULL,
+        [loai_khoan]   NVARCHAR(20) NOT NULL
+                       CONSTRAINT [df_cthd_loaikhoan] DEFAULT (N'HocPhi'),
+        [mo_ta]        NVARCHAR(255) NOT NULL,
+        [so_luong]     INT NOT NULL
+                       CONSTRAINT [df_cthd_soluong] DEFAULT (1),
+        [don_gia]      DECIMAL(12,2) NOT NULL,
+        [thanh_tien]   AS ([so_luong] * [don_gia]) PERSISTED,
+        [ghi_chu]      NVARCHAR(255) NULL,
+        CONSTRAINT [PK_chi_tiet_hoa_don] PRIMARY KEY ([ma_chi_tiet]),
+        CONSTRAINT [fk_cthd_hoadon] FOREIGN KEY ([ma_hoa_don])
+            REFERENCES [dbo].[hoa_don] ([ma_hoa_don]),
+        CONSTRAINT [ck_cthd_loaikhoan] CHECK ([loai_khoan] IN
+            (N'HocPhi', N'GiaoTrinh', N'LePhiThi', N'Khac')),
+        CONSTRAINT [ck_cthd_soluong] CHECK ([so_luong] > 0),
+        CONSTRAINT [ck_cthd_dongia]  CHECK ([don_gia] >= 0)
+    );
+
+    CREATE INDEX [idx_cthd_hoadon] ON [dbo].[chi_tiet_hoa_don] ([ma_hoa_don]);
+END;
+
+/* -------------------------------------------------------------------------------------
+   2. DOI DU LIEU CU: moi hoa don chua co chi tiet -> tao 1 dong "Hoc phi" = tong_tien
+      (dung EXEC de batch nay chi bien dich sau khi bang da duoc tao o buoc 1)
+   ------------------------------------------------------------------------------------- */
+EXEC (N'
+INSERT INTO [dbo].[chi_tiet_hoa_don] ([ma_hoa_don], [loai_khoan], [mo_ta], [so_luong], [don_gia])
+SELECT  h.[ma_hoa_don],
+        N''HocPhi'',
+        N''Học phí lớp '' + l.[ten_lop],
+        1,
+        h.[tong_tien]
+FROM    [dbo].[hoa_don] h
+JOIN    [dbo].[lop_hoc] l ON l.[ma_lop] = h.[ma_lop]
+WHERE   NOT EXISTS (SELECT 1 FROM [dbo].[chi_tiet_hoa_don] c WHERE c.[ma_hoa_don] = h.[ma_hoa_don]);
+');
+
+COMMIT TRANSACTION;
+GO
+
+/* -------------------------------------------------------------------------------------
+   3. KIEM TRA SAU KHI CHAY
+   ------------------------------------------------------------------------------------- */
+
+-- 3.1 So dong: hoa_don / thanh_toan phai giu nguyen so luong cu (10 / 10 neu la du lieu mau)
+SELECT 'hoa_don'          AS bang, COUNT(*) AS so_dong FROM [dbo].[hoa_don]
+UNION ALL SELECT 'thanh_toan',       COUNT(*) FROM [dbo].[thanh_toan]
+UNION ALL SELECT 'chi_tiet_hoa_don', COUNT(*) FROM [dbo].[chi_tiet_hoa_don];
+
+-- 3.2 Hoa don co tong chi tiet KHONG khop tong_tien (ket qua rong = khop het)
+SELECT  h.[ma_hoa_don], h.[tong_tien], SUM(c.[thanh_tien]) AS tong_chi_tiet
+FROM    [dbo].[hoa_don] h
+LEFT JOIN [dbo].[chi_tiet_hoa_don] c ON c.[ma_hoa_don] = h.[ma_hoa_don]
+GROUP BY h.[ma_hoa_don], h.[tong_tien]
+HAVING  h.[tong_tien] <> ISNULL(SUM(c.[thanh_tien]), 0);
+GO
+/* =====================================================================================
+   MIGRATION: Si so lop tu dong cap nhat - [lop_hoc].[si_so_hien_tai]
+
+   - Chi THEM 1 cot moi vao [lop_hoc] + 1 trigger tren [dang_ky_hoc].
+   - KHONG sua/xoa du lieu hay cot nao dang co. Cac bang khac giu nguyen.
+   - Chay lai nhieu lan duoc (idempotent).
+   - Quy uoc: chi tinh hoc vien co dang_ky_hoc.trang_thai = N'DangHoc'
+     (BaoLuu / DaHoanThanh / Huy khong chiem cho). Muon doi thi sua o 2 cho co
+     "trang_thai = N'DangHoc'" ben duoi.
+   - Can SQL Server 2016 SP1 tro len (CREATE OR ALTER).
+   ===================================================================================== */
+
+USE [QuanLyLopTiengAnh];
+GO
+
+/* -------------------------------------------------------------------------------------
+   1. THEM COT + TINH SI SO HIEN TAI CHO DU LIEU CU
+   ------------------------------------------------------------------------------------- */
+SET XACT_ABORT ON;
+BEGIN TRANSACTION;
+
+IF COL_LENGTH(N'dbo.lop_hoc', N'si_so_hien_tai') IS NULL
+BEGIN
+    ALTER TABLE [dbo].[lop_hoc]
+        ADD [si_so_hien_tai] INT NOT NULL
+            CONSTRAINT [df_lophoc_sisohientai] DEFAULT (0);
+END;
+
+-- Tinh lai tu du lieu dang_ky_hoc dang co (EXEC de tranh loi bien dich cot moi)
+EXEC (N'
+UPDATE l
+SET    l.[si_so_hien_tai] = ISNULL(d.so_luong, 0)
+FROM   [dbo].[lop_hoc] l
+LEFT JOIN (
+        SELECT [ma_lop], COUNT(*) AS so_luong
+        FROM   [dbo].[dang_ky_hoc]
+        WHERE  [trang_thai] = N''DangHoc''
+        GROUP BY [ma_lop]
+      ) d ON d.[ma_lop] = l.[ma_lop];
+');
+
+COMMIT TRANSACTION;
+GO
+
+/* -------------------------------------------------------------------------------------
+   2. TRIGGER: moi khi them / sua / xoa dang_ky_hoc -> tinh lai si so cac lop bi anh huong
+      (xu ly ca truong hop doi trang_thai va chuyen hoc vien sang lop khac)
+   ------------------------------------------------------------------------------------- */
+CREATE OR ALTER TRIGGER [dbo].[trg_dangkyhoc_capnhat_siso]
+ON [dbo].[dang_ky_hoc]
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE l
+    SET    l.[si_so_hien_tai] =
+           (SELECT COUNT(*)
+            FROM   [dbo].[dang_ky_hoc] d
+            WHERE  d.[ma_lop] = l.[ma_lop]
+              AND  d.[trang_thai] = N'DangHoc')
+    FROM   [dbo].[lop_hoc] l
+    WHERE  l.[ma_lop] IN (SELECT [ma_lop] FROM inserted
+                          UNION
+                          SELECT [ma_lop] FROM deleted);
+END;
+GO
+
+/* -------------------------------------------------------------------------------------
+   3. (TUY CHON) CHAN DANG KY VUOT SI SO TOI DA
+      Bo comment 2 lenh duoi neu muon: khi lop day, them dang_ky_hoc se bi tu choi.
+      Luu y: neu ha si_so_toi_da thap hon si so hien tai, cap nhat lop do cung bi tu choi.
+   ------------------------------------------------------------------------------------- */
+-- ALTER TABLE [dbo].[lop_hoc] WITH CHECK
+--     ADD CONSTRAINT [ck_lophoc_siso] CHECK ([si_so_hien_tai] <= [si_so_toi_da]);
+-- GO
+
+/* -------------------------------------------------------------------------------------
+   4. KIEM TRA: ket qua rong = si_so_hien_tai khop voi so dang ky thuc te
+   ------------------------------------------------------------------------------------- */
+SELECT l.[ma_lop], l.[ma_lop_code], l.[si_so_hien_tai], l.[si_so_toi_da],
+       (SELECT COUNT(*) FROM [dbo].[dang_ky_hoc] d
+        WHERE d.[ma_lop] = l.[ma_lop] AND d.[trang_thai] = N'DangHoc') AS so_thuc_te
+FROM   [dbo].[lop_hoc] l
+WHERE  l.[si_so_hien_tai] <>
+       (SELECT COUNT(*) FROM [dbo].[dang_ky_hoc] d
+        WHERE d.[ma_lop] = l.[ma_lop] AND d.[trang_thai] = N'DangHoc');
+GO
+
+-- Xem si so tat ca cac lop
+SELECT [ma_lop], [ma_lop_code], [ten_lop], [si_so_hien_tai], [si_so_toi_da]
+FROM   [dbo].[lop_hoc]
+ORDER BY [ma_lop];
+GO

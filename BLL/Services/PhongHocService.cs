@@ -345,8 +345,7 @@ namespace BLL.Services
 
             if (phongHoc == null)
             {
-                throw new Exception(
-                    $"Không tìm thấy phòng học có mã {id}.");
+                return null;
             }
 
             var tenPhong = request.TenPhong.Trim();
@@ -411,8 +410,7 @@ namespace BLL.Services
 
             if (phongHoc == null)
             {
-                throw new Exception(
-                    $"Không tìm thấy phòng học có mã {id}.");
+                return false;
             }
 
             // -----------------------------------------

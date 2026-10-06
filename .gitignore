@@ -25,6 +25,7 @@ project.assets.json
 ## Logs
 *.log
 logs/
+UploadedAssignments/
 
 ## OS
 .DS_Store
@@ -34,4 +35,3 @@ Thumbs.db
 appsettings.Development.json
 *.env
 .env
-
