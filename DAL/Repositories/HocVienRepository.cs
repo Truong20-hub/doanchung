@@ -34,6 +34,17 @@ namespace DAL.Repositories
                 .FirstOrDefaultAsync(x => x.MaHocVien == id);
         }
 
+        public async Task<IEnumerable<PhuHuynh>> GetParentsByHocVienIdAsync(
+            int maHocVien)
+        {
+            return await _context.PhuHuynhs
+                .Where(parent => parent.PhuHuynhHocViens
+                    .Any(link => link.MaHocVien == maHocVien))
+                .Include(parent => parent.MaNguoiDungNavigation)
+                .AsNoTracking()
+                .ToListAsync();
+        }
+
         // Kiểm tra học viên có tồn tại hay không
         public async Task<bool> ExistsByIdAsync(int id)
         {

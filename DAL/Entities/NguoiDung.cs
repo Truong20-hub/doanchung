@@ -54,6 +54,9 @@ public partial class NguoiDung
     [InverseProperty("MaNguoiDungNavigation")]
     public virtual HocVien? HocVien { get; set; }
 
+    [InverseProperty("MaNguoiDungNavigation")]
+    public virtual PhuHuynh? PhuHuynh { get; set; }
+
     [InverseProperty("MaNguoiGuiNavigation")]
     public virtual ICollection<TinNhan> TinNhansDaGui { get; set; } = new List<TinNhan>();
 

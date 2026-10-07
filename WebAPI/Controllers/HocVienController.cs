@@ -51,6 +51,19 @@ namespace WebAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{id:int}/phu-huynh")]
+        public async Task<IActionResult> GetParentsForStudent(int id)
+        {
+            try
+            {
+                return Ok(await _hocVienService.GetParentsForStudentAsync(id));
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+        }
+
         // =========================================================
         // POST: api/HocVien
         // Tạo học viên + tài khoản người dùng

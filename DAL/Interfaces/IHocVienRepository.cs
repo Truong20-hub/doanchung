@@ -17,6 +17,8 @@ namespace DAL.Interfaces
         // Lấy học viên theo ID
         Task<HocVien?> GetByIdAsync(int id);
 
+        Task<IEnumerable<PhuHuynh>> GetParentsByHocVienIdAsync(int maHocVien);
+
         // Kiểm tra học viên có tồn tại hay không bằng ID
         Task<bool> ExistsByIdAsync(int id);
 

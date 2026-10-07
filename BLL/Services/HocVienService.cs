@@ -45,6 +45,24 @@ namespace BLL.Services
             return MapToResponse(hocVien);
         }
 
+        public async Task<IEnumerable<PhuHuynhLienHeResponse>>
+            GetParentsForStudentAsync(int maHocVien)
+        {
+            if (!await _hocVienRepository.ExistsByIdAsync(maHocVien))
+            {
+                throw new KeyNotFoundException(
+                    $"Không tìm thấy học viên có mã {maHocVien}.");
+            }
+
+            var parents = await _hocVienRepository
+                .GetParentsByHocVienIdAsync(maHocVien);
+            return parents.Select(parent => new PhuHuynhLienHeResponse
+            {
+                MaNguoiDung = parent.MaNguoiDung,
+                HoTen = parent.MaNguoiDungNavigation.HoTen
+            });
+        }
+
         // =========================================================
         // CREATE
         // Tạo NguoiDung + HocVien

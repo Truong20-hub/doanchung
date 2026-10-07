@@ -14,6 +14,9 @@ namespace BLL.Interfaces
         // Lấy học viên theo mã học viên
         Task<HocVienResponse?> GetByIdAsync(int id);
 
+        Task<IEnumerable<PhuHuynhLienHeResponse>>
+            GetParentsForStudentAsync(int maHocVien);
+
         // Tạo học viên + tài khoản người dùng
         Task<HocVienResponse> CreateAsync(
             CreateHocVienRequest request);

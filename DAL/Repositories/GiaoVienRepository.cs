@@ -29,6 +29,12 @@ namespace DAL.Repositories
             return result;
         }
 
+        public async Task<GiaoVien?> GetByNguoiDungIdAsync(int maNguoiDung)
+        {
+            return await _context.GiaoViens
+                .FirstOrDefaultAsync(item => item.MaNguoiDung == maNguoiDung);
+        }
+
         public async Task AddAsync(GiaoVien giaoVien)
         {
             await _context.GiaoViens.AddAsync(giaoVien);

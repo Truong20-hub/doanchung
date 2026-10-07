@@ -1,6 +1,7 @@
 using BLL.Interfaces;
 using DTO.BaiTap;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace WebAPI.Controllers
 {
@@ -9,10 +10,14 @@ namespace WebAPI.Controllers
     public class BaiTapController : ControllerBase
     {
         private readonly IBaiTapService _service;
+        private readonly IWebHostEnvironment _environment;
 
-        public BaiTapController(IBaiTapService service)
+        public BaiTapController(
+            IBaiTapService service,
+            IWebHostEnvironment environment)
         {
             _service = service;
+            _environment = environment;
         }
 
         // Trả lỗi thống nhất theo kiểu các controller khác
@@ -104,6 +109,148 @@ namespace WebAPI.Controllers
             catch (Exception ex)
             {
                 return HandleError(ex, "Lỗi khi lấy bài tập của học viên.");
+            }
+        }
+
+        // GET api/BaiTap/5/bai-nop?maGiaoVien=1
+        [HttpGet("{id:int}/bai-nop")]
+        public async Task<IActionResult> GetSubmissions(
+            int id,
+            [FromQuery] int maGiaoVien)
+        {
+            try
+            {
+                return Ok(await _service.GetSubmissionsAsync(id, maGiaoVien));
+            }
+            catch (Exception ex)
+            {
+                return HandleError(ex, "Lỗi khi lấy danh sách bài nộp.");
+            }
+        }
+
+        // GET api/BaiTap/5/hoc-vien-da-nop?maGiaoVien=1
+        [HttpGet("{id:int}/hoc-vien-da-nop")]
+        public async Task<IActionResult> GetSubmittedStudents(
+            int id,
+            [FromQuery] int maGiaoVien)
+        {
+            try
+            {
+                var submissions =
+                    await _service.GetSubmissionsAsync(id, maGiaoVien);
+                return Ok(submissions.Where(item =>
+                    item.TrangThaiNop == "DaNop" ||
+                    item.TrangThaiNop == "NopTre"));
+            }
+            catch (Exception ex)
+            {
+                return HandleError(
+                    ex,
+                    "Lỗi khi lấy danh sách học viên đã nộp bài.");
+            }
+        }
+
+        // POST api/BaiTap/5/nop-bai
+        [HttpPost("{id:int}/nop-bai")]
+        [RequestSizeLimit(105_000_000)]
+        public async Task<IActionResult> Submit(
+            int id,
+            [FromForm] int maHocVien,
+            [FromForm] string? ghiChu,
+            [FromForm] List<IFormFile>? files)
+        {
+            var savedFiles = new List<string>();
+            try
+            {
+                var uploadedFiles = files ?? new List<IFormFile>();
+                if (uploadedFiles.Count > 5)
+                {
+                    return BadRequest(new
+                    {
+                        message = "Mỗi lần nộp tối đa 5 tệp."
+                    });
+                }
+
+                if (uploadedFiles.Any(file =>
+                        file.Length <= 0 || file.Length > 20_000_000))
+                {
+                    return BadRequest(new
+                    {
+                        message =
+                            "Mỗi tệp phải có dung lượng từ 1 byte đến 20 MB."
+                    });
+                }
+
+                var uploadDirectory = Path.Combine(
+                    _environment.WebRootPath ?? Path.Combine(
+                        _environment.ContentRootPath, "wwwroot"),
+                    "UploadedAssignments");
+                Directory.CreateDirectory(uploadDirectory);
+
+                var submissionFiles =
+                    new List<BaiTapSubmissionFileResponse>();
+                foreach (var file in uploadedFiles)
+                {
+                    var extension = Path.GetExtension(file.FileName);
+                    if (extension.Length > 10 ||
+                        extension.Skip(1).Any(character =>
+                            !char.IsLetterOrDigit(character)))
+                    {
+                        extension = ".bin";
+                    }
+                    var storedName = $"{Guid.NewGuid():N}{extension}";
+                    var path = Path.Combine(uploadDirectory, storedName);
+                    await using (var stream = System.IO.File.Create(path))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    savedFiles.Add(path);
+                    submissionFiles.Add(new BaiTapSubmissionFileResponse
+                    {
+                        TenFile = Path.GetFileName(file.FileName),
+                        DuongDan = $"/UploadedAssignments/{storedName}"
+                    });
+                }
+
+                var filesJson = submissionFiles.Count == 0
+                    ? null
+                    : JsonSerializer.Serialize(submissionFiles);
+                var result = await _service.SubmitAsync(
+                    id, maHocVien, ghiChu, filesJson);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                foreach (var path in savedFiles)
+                {
+                    if (System.IO.File.Exists(path))
+                    {
+                        System.IO.File.Delete(path);
+                    }
+                }
+
+                return HandleError(ex, "Lỗi khi nộp bài tập.");
+            }
+        }
+
+        // PUT api/BaiTap/5/cham-diem/8?maGiaoVien=1
+        [HttpPut("{id:int}/cham-diem/{maHocVien:int}")]
+        public async Task<IActionResult> Grade(
+            int id,
+            int maHocVien,
+            [FromQuery] int maGiaoVien,
+            [FromBody] GradeBaiTapRequest request)
+        {
+            try
+            {
+                await _service.GradeAsync(
+                    id, maHocVien, maGiaoVien, request);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return HandleError(ex, "Lỗi khi chấm điểm bài tập.");
             }
         }
 

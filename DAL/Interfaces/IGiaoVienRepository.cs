@@ -14,6 +14,7 @@ public interface IGiaoVienRepository
     Task<IEnumerable<GiaoVien>> GetAllAsync();
     // lấy giáo viên theo id
     Task<GiaoVien?> GetByIdAsync(int id);
+    Task<GiaoVien?> GetByNguoiDungIdAsync(int maNguoiDung);
     // thêm giáo viên
     Task AddAsync(GiaoVien giaoVien);
     // cập nhật giáo viên

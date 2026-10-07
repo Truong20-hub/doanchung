@@ -132,9 +132,17 @@ builder.Services.AddScoped<IDiemDanhService, DiemDanhService>();
 builder.Services.AddScoped<IDiemThiRepository, DiemThiRepository>();
 builder.Services.AddScoped<IDiemThiService, DiemThiService>();
 
+builder.Services.AddScoped<IBaiTapRepository, BaiTapRepository>();
+builder.Services.AddScoped<IDiemRepository, DiemRepository>();
+builder.Services.AddScoped<IBaiTapService, BaiTapService>();
+
 builder.Services.AddScoped<IJwtService, JwtService>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+Directory.CreateDirectory(
+    builder.Environment.WebRootPath ??
+    Path.Combine(builder.Environment.ContentRootPath, "wwwroot"));
 
 var app = builder.Build();
 
@@ -149,6 +157,22 @@ app.UseCors("Frontend");
 
 // 2. KHÔNG DÙNG HTTPS REDIRECTION KHI DEV VỚI EXPO WEB / MOBILE
 // app.UseHttpsRedirection();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = context =>
+    {
+        if (context.File.PhysicalPath?.Contains(
+                "UploadedAssignments",
+                StringComparison.OrdinalIgnoreCase) == true)
+        {
+            context.Context.Response.Headers["Content-Disposition"] =
+                "attachment";
+            context.Context.Response.Headers["X-Content-Type-Options"] =
+                "nosniff";
+        }
+    }
+});
 
 app.UseAuthentication();
 app.UseAuthorization();

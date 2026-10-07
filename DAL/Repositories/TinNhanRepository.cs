@@ -2,6 +2,7 @@ using DAL.Context;
 using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using DAL.Model;
 
 namespace DAL.Repositories;
 
@@ -175,5 +176,59 @@ public class TinNhanRepository : ITinNhanRepository
         _context.TinNhans.Remove(entity);
         await _context.SaveChangesAsync();
         return true;
+    }
+
+    public async Task<NguoiGuiSummary[]> GetDanhSachNguoiGuiChoNguoiNhanAsync(int maNguoiNhan)
+    {
+        var rows = await _context.TinNhans
+            .AsNoTracking()
+            .Where(x => x.MaNguoiNhan == maNguoiNhan)
+            .GroupBy(x => new { x.MaNguoiGui, x.MaNguoiGuiNavigation.HoTen })
+            .Select(g => new
+            {
+                g.Key.MaNguoiGui,
+                g.Key.HoTen,
+                Tong = g.Count(),
+                ChuaDoc = g.Count(x => !x.DaDoc),
+                GanNhat = g.Max(x => x.ThoiGianGui)
+            })
+            .ToListAsync();
+
+        return rows
+            .Select(r => new NguoiGuiSummary(r.MaNguoiGui, r.HoTen, r.Tong, r.ChuaDoc, r.GanNhat))
+            .OrderByDescending(x => x.TinGanNhat)
+            .ToArray();
+    }
+
+
+    public async Task<TinNhanItem[]> GetCuocTroChuyenAsync(int maNguoiA, int maNguoiB)
+    {
+        return await _context.TinNhans
+            .AsNoTracking()
+            .Where(x => (x.MaNguoiGui == maNguoiA && x.MaNguoiNhan == maNguoiB)
+                     || (x.MaNguoiGui == maNguoiB && x.MaNguoiNhan == maNguoiA))
+            .OrderBy(x => x.ThoiGianGui)
+            .Select(x => new TinNhanItem(x.MaTinNhan, x.MaNguoiGui, x.MaNguoiNhan, x.NoiDung, x.ThoiGianGui))
+            .ToArrayAsync();
+    }
+    public async Task<NguoiGuiSummary[]> GetDanhSachNguoiGuiAsync()
+    {
+        var rows = await _context.TinNhans
+            .AsNoTracking()
+            .GroupBy(x => new { x.MaNguoiGui, x.MaNguoiGuiNavigation.HoTen })
+            .Select(g => new
+            {
+                g.Key.MaNguoiGui,
+                g.Key.HoTen,
+                Tong = g.Count(),
+                ChuaDoc = g.Count(x => !x.DaDoc),
+                GanNhat = g.Max(x => x.ThoiGianGui)
+            })
+            .ToListAsync();
+
+        return rows
+            .Select(r => new NguoiGuiSummary(r.MaNguoiGui, r.HoTen, r.Tong, r.ChuaDoc, r.GanNhat))
+            .OrderByDescending(x => x.TinGanNhat)
+            .ToArray();
     }
 }

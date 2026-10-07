@@ -1,4 +1,5 @@
 using DAL.Entities;
+using DAL.Model;
 
 namespace DAL.Interfaces;
 
@@ -14,5 +15,8 @@ public interface ITinNhanRepository
     Task<bool> ExistsByIdAsync(int id);
     Task<TinNhan> AddAsync(TinNhan tinNhan);
     Task<TinNhan?> UpdateAsync(TinNhan tinNhan);
+    Task<NguoiGuiSummary[]> GetDanhSachNguoiGuiAsync();
+    Task<NguoiGuiSummary[]> GetDanhSachNguoiGuiChoNguoiNhanAsync(int maNguoiNhan);
+    Task<TinNhanItem[]> GetCuocTroChuyenAsync(int maNguoiA, int maNguoiB);
     Task<bool> DeleteAsync(int id);
 }

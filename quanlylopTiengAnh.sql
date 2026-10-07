@@ -44,6 +44,8 @@ IF OBJECT_ID(N'dbo.lich_hoc', N'U')      IS NOT NULL DROP TABLE [dbo].[lich_hoc]
 IF OBJECT_ID(N'dbo.lop_hoc', N'U')       IS NOT NULL DROP TABLE [dbo].[lop_hoc];
 IF OBJECT_ID(N'dbo.phong_hoc', N'U')     IS NOT NULL DROP TABLE [dbo].[phong_hoc];
 IF OBJECT_ID(N'dbo.khoa_hoc', N'U')      IS NOT NULL DROP TABLE [dbo].[khoa_hoc];
+IF OBJECT_ID(N'dbo.phu_huynh_hoc_vien', N'U') IS NOT NULL DROP TABLE [dbo].[phu_huynh_hoc_vien];
+IF OBJECT_ID(N'dbo.phu_huynh', N'U')     IS NOT NULL DROP TABLE [dbo].[phu_huynh];
 IF OBJECT_ID(N'dbo.hoc_vien', N'U')      IS NOT NULL DROP TABLE [dbo].[hoc_vien];
 IF OBJECT_ID(N'dbo.giao_vien', N'U')     IS NOT NULL DROP TABLE [dbo].[giao_vien];
 IF OBJECT_ID(N'dbo.nguoi_dung', N'U')    IS NOT NULL DROP TABLE [dbo].[nguoi_dung];
@@ -125,6 +127,35 @@ CREATE TABLE [dbo].[hoc_vien]
     CONSTRAINT [fk_hocvien_nguoidung] FOREIGN KEY ([ma_nguoi_dung]) REFERENCES [dbo].[nguoi_dung] ([ma_nguoi_dung]) ON DELETE CASCADE,
     CONSTRAINT [ck_hocvien_gioitinh] CHECK ([gioi_tinh] IN (N'Nam', N'Nu', N'Khac'))
 );
+GO
+
+-- 2.4.1 phu_huynh ----------------------------------------------------------------------
+-- Tai khoan phu huynh dung chung thong tin dang nhap/lien he trong nguoi_dung.
+CREATE TABLE [dbo].[phu_huynh]
+(
+    [ma_phu_huynh]  INT IDENTITY(1,1) NOT NULL,
+    [ma_nguoi_dung] INT NOT NULL,
+    CONSTRAINT [PK_phu_huynh] PRIMARY KEY ([ma_phu_huynh]),
+    CONSTRAINT [UQ_phuhuynh_nguoidung] UNIQUE ([ma_nguoi_dung]),
+    CONSTRAINT [fk_phuhuynh_nguoidung] FOREIGN KEY ([ma_nguoi_dung])
+        REFERENCES [dbo].[nguoi_dung] ([ma_nguoi_dung]) ON DELETE CASCADE
+);
+GO
+
+-- Mot phu huynh co the lien ket nhieu hoc vien va nguoc lai.
+CREATE TABLE [dbo].[phu_huynh_hoc_vien]
+(
+    [ma_phu_huynh] INT NOT NULL,
+    [ma_hoc_vien]  INT NOT NULL,
+    CONSTRAINT [PK_phu_huynh_hoc_vien] PRIMARY KEY ([ma_phu_huynh], [ma_hoc_vien]),
+    CONSTRAINT [fk_phuhuynh_hocvien_phuhuynh] FOREIGN KEY ([ma_phu_huynh])
+        REFERENCES [dbo].[phu_huynh] ([ma_phu_huynh]) ON DELETE CASCADE,
+    CONSTRAINT [fk_phuhuynh_hocvien_hocvien] FOREIGN KEY ([ma_hoc_vien])
+        REFERENCES [dbo].[hoc_vien] ([ma_hoc_vien]) ON DELETE CASCADE
+);
+GO
+CREATE INDEX [idx_phuhuynh_hocvien_hocvien]
+    ON [dbo].[phu_huynh_hoc_vien] ([ma_hoc_vien]);
 GO
 
 -- 2.5 khoa_hoc --------------------------------------------------------------------------
@@ -923,3 +954,100 @@ SELECT [ma_lop], [ma_lop_code], [ten_lop], [si_so_hien_tai], [si_so_toi_da]
 FROM   [dbo].[lop_hoc]
 ORDER BY [ma_lop];
 GO
+USE [QuanLyLopTiengAnh];
+GO
+
+IF OBJECT_ID(N'dbo.phu_huynh', N'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[phu_huynh]
+    (
+        [ma_phu_huynh]  INT IDENTITY(1,1) NOT NULL,
+        [ma_nguoi_dung] INT NOT NULL,
+        CONSTRAINT [PK_phu_huynh] PRIMARY KEY ([ma_phu_huynh]),
+        CONSTRAINT [UQ_phuhuynh_nguoidung] UNIQUE ([ma_nguoi_dung]),
+        CONSTRAINT [fk_phuhuynh_nguoidung] FOREIGN KEY ([ma_nguoi_dung])
+            REFERENCES [dbo].[nguoi_dung] ([ma_nguoi_dung]) ON DELETE CASCADE
+    );
+END;
+GO
+
+IF OBJECT_ID(N'dbo.phu_huynh_hoc_vien', N'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[phu_huynh_hoc_vien]
+    (
+        [ma_phu_huynh] INT NOT NULL,
+        [ma_hoc_vien]  INT NOT NULL,
+        CONSTRAINT [PK_phu_huynh_hoc_vien] PRIMARY KEY ([ma_phu_huynh], [ma_hoc_vien]),
+        CONSTRAINT [fk_phuhuynh_hocvien_phuhuynh] FOREIGN KEY ([ma_phu_huynh])
+            REFERENCES [dbo].[phu_huynh] ([ma_phu_huynh]) ON DELETE CASCADE,
+        CONSTRAINT [fk_phuhuynh_hocvien_hocvien] FOREIGN KEY ([ma_hoc_vien])
+            REFERENCES [dbo].[hoc_vien] ([ma_hoc_vien]) ON DELETE CASCADE
+    );
+END;
+GO
+
+IF NOT EXISTS
+(
+    SELECT 1
+    FROM sys.indexes
+    WHERE [name] = N'idx_phuhuynh_hocvien_hocvien'
+      AND [object_id] = OBJECT_ID(N'dbo.phu_huynh_hoc_vien')
+)
+BEGIN
+    CREATE INDEX [idx_phuhuynh_hocvien_hocvien]
+        ON [dbo].[phu_huynh_hoc_vien] ([ma_hoc_vien]);
+END;
+GO
+-- Run once against an existing database before starting the API.
+-- The script is safe to run again.
+IF COL_LENGTH(N'dbo.diem', N'ghi_chu_nop') IS NULL
+BEGIN
+    ALTER TABLE [dbo].[diem]
+        ADD [ghi_chu_nop] NVARCHAR(1000) NULL;
+END
+GO
+
+IF COL_LENGTH(N'dbo.diem', N'tep_nop') IS NULL
+BEGIN
+    ALTER TABLE [dbo].[diem]
+        ADD [tep_nop] NVARCHAR(MAX) NULL;
+END
+GO
+use QuanLyLopTiengAnh
+-- 1. Tạo 10 tài khoản phụ huynh (username/email phải duy nhất nên gắn theo mã học viên)
+INSERT INTO dbo.nguoi_dung (ten_dang_nhap, mat_khau_hash, ho_ten, email, so_dien_thoai, ma_vai_tro)
+SELECT N'ph_hv' + CAST(hv.ma_hoc_vien AS NVARCHAR(10)),
+       N'123456',
+       hv.ten_phu_huynh,
+       N'ph_hv' + CAST(hv.ma_hoc_vien AS NVARCHAR(10)) + N'@gmail.com',
+       hv.sdt_phu_huynh,
+       10
+FROM dbo.hoc_vien hv
+WHERE hv.ten_phu_huynh IS NOT NULL;
+GO
+
+-- 2. Tạo hồ sơ phụ huynh
+INSERT INTO dbo.phu_huynh (ma_nguoi_dung)
+SELECT ma_nguoi_dung
+FROM dbo.nguoi_dung
+WHERE ma_vai_tro = 10
+  AND ma_nguoi_dung NOT IN (SELECT ma_nguoi_dung FROM dbo.phu_huynh);
+GO
+
+-- 3. Liên kết phụ huynh - học viên
+INSERT INTO dbo.phu_huynh_hoc_vien (ma_phu_huynh, ma_hoc_vien)
+SELECT ph.ma_phu_huynh, hv.ma_hoc_vien
+FROM dbo.hoc_vien hv
+JOIN dbo.nguoi_dung nd
+  ON nd.ten_dang_nhap = N'ph_hv' + CAST(hv.ma_hoc_vien AS NVARCHAR(10))
+JOIN dbo.phu_huynh ph
+  ON ph.ma_nguoi_dung = nd.ma_nguoi_dung;
+GO
+select * from phu_huynh
+select * from phu_huynh_hoc_vien
+SELECT ph.ma_phu_huynh, nd.ho_ten AS phu_huynh, hvnd.ho_ten AS hoc_vien
+FROM dbo.phu_huynh_hoc_vien l
+JOIN dbo.phu_huynh ph  ON ph.ma_phu_huynh = l.ma_phu_huynh
+JOIN dbo.nguoi_dung nd ON nd.ma_nguoi_dung = ph.ma_nguoi_dung
+JOIN dbo.hoc_vien hv   ON hv.ma_hoc_vien = l.ma_hoc_vien
+JOIN dbo.nguoi_dung hvnd ON hvnd.ma_nguoi_dung = hv.ma_nguoi_dung;

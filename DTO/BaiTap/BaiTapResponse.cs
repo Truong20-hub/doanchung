@@ -37,5 +37,9 @@ namespace DTO.BaiTap
         public DateTime? NgayNop { get; set; }
 
         public string? NhanXet { get; set; }
+
+        public string? GhiChuNop { get; set; }
+
+        public List<BaiTapSubmissionFileResponse>? FilesNop { get; set; }
     }
 }

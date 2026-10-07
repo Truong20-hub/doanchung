@@ -2,6 +2,7 @@ using BLL.Interfaces;
 using DAL.Entities;
 using DAL.Interfaces;
 using DTO.BaiTap;
+using System.Text.Json;
 
 namespace BLL.Services
 {
@@ -12,19 +13,25 @@ namespace BLL.Services
         private readonly IBuoiHocRepository _buoiHocRepository;
         private readonly IGiaoVienRepository _giaoVienRepository;
         private readonly IHocVienRepository _hocVienRepository;
+        private readonly IDangKyHocRepository _dangKyHocRepository;
+        private readonly IDiemRepository _diemRepository;
 
         public BaiTapService(
             IBaiTapRepository repository,
             ILopHocRepository lopHocRepository,
             IBuoiHocRepository buoiHocRepository,
             IGiaoVienRepository giaoVienRepository,
-            IHocVienRepository hocVienRepository)
+            IHocVienRepository hocVienRepository,
+            IDangKyHocRepository dangKyHocRepository,
+            IDiemRepository diemRepository)
         {
             _repository = repository;
             _lopHocRepository = lopHocRepository;
             _buoiHocRepository = buoiHocRepository;
             _giaoVienRepository = giaoVienRepository;
             _hocVienRepository = hocVienRepository;
+            _dangKyHocRepository = dangKyHocRepository;
+            _diemRepository = diemRepository;
         }
 
         // =====================================================
@@ -56,7 +63,13 @@ namespace BLL.Services
                 TrangThaiNop = diem?.TrangThaiNop,
                 DiemSo = diem?.DiemSo,
                 NgayNop = diem?.NgayNop,
-                NhanXet = diem?.NhanXet
+                NhanXet = diem?.NhanXet,
+                GhiChuNop = diem?.GhiChuNop,
+                FilesNop = string.IsNullOrWhiteSpace(diem?.TepNopJson)
+                    ? null
+                    : JsonSerializer.Deserialize<
+                        List<BaiTapSubmissionFileResponse>>(
+                            diem.TepNopJson)
             };
         }
 
@@ -127,6 +140,14 @@ namespace BLL.Services
             {
                 throw new KeyNotFoundException(
                     $"Giáo viên có mã {maGiaoVien} không tồn tại.");
+            }
+
+            var assignedClasses =
+                await _lopHocRepository.GetByGiaoVienIdAsync(maGiaoVien);
+            if (!assignedClasses.Any(item => item.MaLop == maLop))
+            {
+                throw new ArgumentException(
+                    "Giáo viên không được phân công lớp đã chọn.");
             }
 
             if (maBuoi.HasValue)
@@ -220,6 +241,171 @@ namespace BLL.Services
 
             var data = await _repository.GetByMaHocVienAsync(maHocVien);
             return data.Select(MapToResponse);
+        }
+
+        public async Task<IEnumerable<BaiTapSubmissionResponse>>
+            GetSubmissionsAsync(int maBaiTap, int maGiaoVien)
+        {
+            var assignment = await _repository.GetByIdAsync(maBaiTap);
+            if (assignment == null)
+            {
+                throw new KeyNotFoundException(
+                    $"Không tìm thấy bài tập có mã {maBaiTap}.");
+            }
+
+            if (assignment.MaGiaoVien != maGiaoVien)
+            {
+                throw new ArgumentException(
+                    "Bài tập không thuộc giáo viên đang đăng nhập.");
+            }
+
+            var registrations = await _dangKyHocRepository
+                .GetByLopIdAsync(assignment.MaLop);
+            var grades = await _diemRepository
+                .GetByMaBaiTapAsync(maBaiTap);
+
+            var gradeByStudent = grades.ToDictionary(item => item.MaHocVien);
+            return registrations
+                .Where(item => item.TrangThai == "DangHoc")
+                .Select(item =>
+                {
+                    gradeByStudent.TryGetValue(
+                        item.MaHocVien, out var grade);
+                    return new BaiTapSubmissionResponse
+                    {
+                        MaHocVien = item.MaHocVien,
+                        HoTenHocVien =
+                            item.MaHocVienNavigation.HoTen,
+                        TrangThaiNop = grade?.TrangThaiNop ?? "ChuaNop",
+                        NgayNop = grade?.NgayNop,
+                        GhiChuNop = grade?.GhiChuNop,
+                        FilesNop = string.IsNullOrWhiteSpace(grade?.TepNopJson)
+                            ? null
+                            : JsonSerializer.Deserialize<
+                                List<BaiTapSubmissionFileResponse>>(
+                                grade.TepNopJson),
+                        DiemSo = grade?.DiemSo,
+                        NhanXet = grade?.NhanXet
+                    };
+                })
+                .OrderBy(item => item.HoTenHocVien)
+                .ToList();
+        }
+
+        public async Task<BaiTapResponse> SubmitAsync(
+            int maBaiTap,
+            int maHocVien,
+            string? ghiChu,
+            string? tepNopJson)
+        {
+            var assignment = await _repository.GetByIdAsync(maBaiTap);
+            if (assignment == null)
+            {
+                throw new KeyNotFoundException(
+                    $"Không tìm thấy bài tập có mã {maBaiTap}.");
+            }
+
+            if (!await _hocVienRepository.ExistsByIdAsync(maHocVien))
+            {
+                throw new KeyNotFoundException(
+                    $"Học viên có mã {maHocVien} không tồn tại.");
+            }
+
+            var enrollment = await _dangKyHocRepository
+                .GetByHocVienIdAndLopIdAsync(maHocVien, assignment.MaLop);
+            if (enrollment?.TrangThai != "DangHoc")
+            {
+                throw new ArgumentException(
+                    "Học viên không đang theo học lớp của bài tập này.");
+            }
+
+            var status = assignment.HanNop.HasValue &&
+                         DateOnly.FromDateTime(DateTime.Now) >
+                         assignment.HanNop.Value
+                ? "NopTre"
+                : "DaNop";
+            var diem = await _diemRepository
+                .GetByMaBaiTapAndHocVienAsync(maBaiTap, maHocVien);
+
+            if (diem == null)
+            {
+                diem = new Diem
+                {
+                    MaBaiTap = maBaiTap,
+                    MaHocVien = maHocVien,
+                    TrangThaiNop = status
+                };
+            }
+            else
+            {
+                diem.TrangThaiNop = status;
+            }
+
+            diem.NgayNop = DateTime.Now;
+            diem.GhiChuNop = string.IsNullOrWhiteSpace(ghiChu)
+                ? null
+                : ghiChu.Trim();
+            if (!string.IsNullOrWhiteSpace(tepNopJson))
+            {
+                diem.TepNopJson = tepNopJson;
+            }
+
+            if (diem.MaDiem == 0)
+            {
+                await _diemRepository.AddAsync(diem);
+            }
+            else
+            {
+                await _diemRepository.UpdateAsync(diem);
+            }
+
+            var result = MapToResponse(assignment);
+            result.TrangThaiNop = diem.TrangThaiNop;
+            result.DiemSo = diem.DiemSo;
+            result.NgayNop = diem.NgayNop;
+            result.NhanXet = diem.NhanXet;
+            result.GhiChuNop = diem.GhiChuNop;
+            result.FilesNop = string.IsNullOrWhiteSpace(diem.TepNopJson)
+                ? null
+                : JsonSerializer.Deserialize<
+                    List<BaiTapSubmissionFileResponse>>(diem.TepNopJson);
+            return result;
+        }
+
+        public async Task GradeAsync(
+            int maBaiTap,
+            int maHocVien,
+            int maGiaoVien,
+            GradeBaiTapRequest request)
+        {
+            var assignment = await _repository.GetByIdAsync(maBaiTap);
+            if (assignment == null)
+            {
+                throw new KeyNotFoundException(
+                    $"Không tìm thấy bài tập có mã {maBaiTap}.");
+            }
+
+            if (assignment.MaGiaoVien != maGiaoVien)
+            {
+                throw new ArgumentException(
+                    "Bài tập không thuộc giáo viên đang đăng nhập.");
+            }
+
+            var diem = await _diemRepository
+                .GetByMaBaiTapAndHocVienAsync(maBaiTap, maHocVien);
+            if (diem == null ||
+                diem.TrangThaiNop == "ChuaNop" ||
+                !diem.NgayNop.HasValue)
+            {
+                throw new InvalidOperationException(
+                    "Chỉ có thể chấm bài sau khi học viên đã nộp.");
+            }
+
+            diem.DiemSo = request.DiemSo;
+            diem.NhanXet = string.IsNullOrWhiteSpace(request.NhanXet)
+                ? null
+                : request.NhanXet.Trim();
+            await _diemRepository.UpdateAsync(diem);
         }
 
         public async Task<IEnumerable<BaiTapResponse>> SearchAsync(

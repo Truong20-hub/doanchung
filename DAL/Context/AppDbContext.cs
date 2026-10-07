@@ -56,6 +56,10 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<Diem> Diems { get; set; }
 
+    public virtual DbSet<PhuHuynh> PhuHuynhs { get; set; }
+
+    public virtual DbSet<PhuHuynhHocVien> PhuHuynhHocViens { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<BuoiHoc>(entity =>
@@ -225,6 +229,31 @@ public partial class AppDbContext : DbContext
             entity.HasOne(d => d.MaNguoiDungNavigation).WithOne(p => p.HocVien)
                 .HasForeignKey<HocVien>(d => d.MaNguoiDung)
                 .HasConstraintName("fk_hocvien_nguoidung");
+        });
+
+        modelBuilder.Entity<PhuHuynh>(entity =>
+        {
+            entity.HasKey(e => e.MaPhuHuynh).HasName("PK_phu_huynh");
+
+            entity.HasOne(d => d.MaNguoiDungNavigation).WithOne(p => p.PhuHuynh)
+                .HasForeignKey<PhuHuynh>(d => d.MaNguoiDung)
+                .HasConstraintName("fk_phuhuynh_nguoidung");
+        });
+
+        modelBuilder.Entity<PhuHuynhHocVien>(entity =>
+        {
+            entity.HasKey(e => new { e.MaPhuHuynh, e.MaHocVien })
+                .HasName("PK_phu_huynh_hoc_vien");
+
+            entity.HasOne(d => d.MaPhuHuynhNavigation)
+                .WithMany(p => p.PhuHuynhHocViens)
+                .HasForeignKey(d => d.MaPhuHuynh)
+                .HasConstraintName("fk_phuhuynh_hocvien_phuhuynh");
+
+            entity.HasOne(d => d.MaHocVienNavigation)
+                .WithMany(p => p.PhuHuynhHocViens)
+                .HasForeignKey(d => d.MaHocVien)
+                .HasConstraintName("fk_phuhuynh_hocvien_hocvien");
         });
 
         modelBuilder.Entity<KhoaHoc>(entity =>

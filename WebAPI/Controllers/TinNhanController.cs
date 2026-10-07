@@ -1,6 +1,11 @@
 using BLL.Interfaces;
+using DAL.Context;
 using DTO.TinNhan;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using DAL.Model;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace WebAPI.Controllers;
 
@@ -9,11 +14,92 @@ namespace WebAPI.Controllers;
 public class TinNhanController : ControllerBase
 {
     private readonly ITinNhanService _service;
+    private readonly AppDbContext _context;
 
-    public TinNhanController(ITinNhanService service)
+    public TinNhanController(ITinNhanService service, AppDbContext context)
     {
         _service = service;
+        _context = context;
     }
+
+    [Authorize]
+    [HttpGet("lop/{maLop:int}/hoi-thoai")]
+    public async Task<IActionResult> GetStudentClassConversation(int maLop)
+    {
+        var participants = await GetStudentChatParticipantsAsync(maLop);
+        if (participants == null)
+            return NotFound(new { message = "Không tìm thấy lớp học hoặc bạn không có quyền truy cập." });
+
+        var messages = await _service.GetConversationAsync(
+            participants.StudentUserId,
+            participants.TeacherUserId,
+            participants.StudentId);
+
+        return Ok(new
+        {
+            maNguoiDungGiaoVien = participants.TeacherUserId,
+            tinNhans = messages
+        });
+    }
+
+    [Authorize]
+    [HttpPost("lop/{maLop:int}")]
+    public async Task<IActionResult> SendStudentClassMessage(
+        int maLop,
+        [FromBody] SendStudentTinNhanRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.NoiDung))
+            return BadRequest(new { message = "Nội dung không được để trống." });
+
+        var participants = await GetStudentChatParticipantsAsync(maLop);
+        if (participants == null)
+            return NotFound(new { message = "Không tìm thấy lớp học hoặc bạn không có quyền truy cập." });
+
+        try
+        {
+            var message = await _service.CreateAsync(new CreateTinNhanRequest
+            {
+                MaNguoiGui = participants.StudentUserId,
+                MaNguoiNhan = participants.TeacherUserId,
+                MaHocVien = participants.StudentId,
+                NoiDung = request.NoiDung.Trim()
+            });
+
+            return Ok(message);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+
+    private async Task<StudentChatParticipants?> GetStudentChatParticipantsAsync(int maLop)
+    {
+        var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (!int.TryParse(userIdValue, out var studentUserId))
+            return null;
+
+        return await _context.DangKyHocs
+            .Where(enrollment =>
+                enrollment.MaHocVienNavigation.MaNguoiDung == studentUserId &&
+                enrollment.MaLop == maLop &&
+                enrollment.TrangThai == "DangHoc" &&
+                enrollment.MaLopNavigation.MaGiaoVien != null)
+            .Select(enrollment => new StudentChatParticipants(
+                enrollment.MaHocVien,
+                studentUserId,
+                enrollment.MaLopNavigation.MaGiaoVienNavigation!.MaNguoiDung))
+            .SingleOrDefaultAsync();
+    }
+
+    private sealed record StudentChatParticipants(
+        int StudentId,
+        int StudentUserId,
+        int TeacherUserId);
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
@@ -239,4 +325,50 @@ public class TinNhanController : ControllerBase
             });
         }
     }
+    /// <summary>
+    /// Danh sách tất cả người đã từng gửi tin nhắn.
+    /// GET api/TinNhan/nguoi-gui
+    /// </summary>
+    [HttpGet("nguoi-gui")]
+    [ProducesResponseType(typeof(NguoiGuiSummary[]), StatusCodes.Status200OK)]
+    public async Task<ActionResult<NguoiGuiSummary[]>> GetDanhSachNguoiGui()
+    {
+        var result = await _service.GetDanhSachNguoiGuiAsync();
+        return Ok(result);
+    }
+
+    /// <summary>
+    /// Danh sách những người đã nhắn cho một người dùng cụ thể.
+    /// GET api/TinNhan/nguoi-gui/5
+    /// </summary>
+    [HttpGet("nguoi-gui/{maNguoiNhan:int}")]
+    [ProducesResponseType(typeof(NguoiGuiSummary[]), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<NguoiGuiSummary[]>> GetDanhSachNguoiGuiChoNguoiNhan(int maNguoiNhan)
+    {
+        if (maNguoiNhan <= 0)
+            return BadRequest("Mã người nhận không hợp lệ.");
+
+        var result = await _service.GetDanhSachNguoiGuiChoNguoiNhanAsync(maNguoiNhan);
+        return Ok(result);
+    }
+
+    /// <summary>
+    /// Cuộc trò chuyện giữa hai người.
+    /// GET api/TinNhan/cuoc-tro-chuyen?maNguoiA=1&amp;maNguoiB=2
+    /// </summary>
+    [HttpGet("cuoc-tro-chuyen")]
+    [ProducesResponseType(typeof(TinNhanItem[]), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<TinNhanItem[]>> GetCuocTroChuyen(
+        [FromQuery] int maNguoiA,
+        [FromQuery] int maNguoiB)
+    {
+        if (maNguoiA <= 0 || maNguoiB <= 0)
+            return BadRequest("Mã người dùng không hợp lệ.");
+
+        var result = await _service.GetCuocTroChuyenAsync(maNguoiA, maNguoiB);
+        return Ok(result);
+    }
+
 }

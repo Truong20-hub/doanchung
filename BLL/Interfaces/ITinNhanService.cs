@@ -1,4 +1,5 @@
 using DTO.TinNhan;
+using DAL.Model;
 
 namespace BLL.Interfaces;
 
@@ -14,4 +15,7 @@ public interface ITinNhanService
     Task<TinNhanResponse> CreateAsync(CreateTinNhanRequest request);
     Task<TinNhanResponse?> UpdateAsync(int id, UpdateTinNhanRequest request);
     Task<bool> DeleteAsync(int id);
+    Task<NguoiGuiSummary[]> GetDanhSachNguoiGuiAsync();
+    Task<NguoiGuiSummary[]> GetDanhSachNguoiGuiChoNguoiNhanAsync(int maNguoiNhan);
+    Task<TinNhanItem[]> GetCuocTroChuyenAsync(int maNguoiA, int maNguoiB);
 }
